@@ -1,0 +1,12 @@
+<svg width="320" height="140" viewBox="0 0 320 140" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="140" rx="12" fill="#1E1E8F" />
+  <text x="24" y="78" font-family="Inter, Arial, sans-serif" font-size="82" font-weight="800" fill="#FFFFFF" letter-spacing="2">
+    IRSDL
+  </text>
+  <text x="24" y="120" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">
+    RESEARCH & THRIVE
+  </text>
+  <circle cx="300" cy="30" r="18" fill="none" stroke="#FFFFFF" stroke-width="4" />
+  <text x="292" y="38" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">R</text>
+</svg>
+
