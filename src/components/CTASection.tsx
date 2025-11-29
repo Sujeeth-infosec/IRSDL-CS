@@ -1,13 +1,18 @@
 import { Link } from 'react-router-dom'
 
 type CTASectionProps = {
-  title: string
-  description: string
-  primaryCta: { label: string; href: string }
+  title?: string
+  description?: string
+  primaryCta?: { label: string; href: string }
   secondaryCta?: { label: string; href: string }
 }
 
-const CTASection = ({ title, description, primaryCta, secondaryCta }: CTASectionProps) => (
+const CTASection = ({ 
+  title = "Ready to Secure Your Digital Assets?",
+  description = "Get started with a comprehensive security assessment today.",
+  primaryCta = { label: "Get Started", href: "/contact" },
+  secondaryCta = { label: "Learn More", href: "/services" }
+}: CTASectionProps) => (
   <section className="bg-gradient-to-r from-primary via-neon to-accent text-white rounded-3xl px-8 py-12 lg:px-16 lg:py-16 shadow-panel">
     <div className="flex flex-col lg:flex-row items-center gap-8 justify-between">
       <div>

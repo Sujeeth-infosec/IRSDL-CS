@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import Careers from './pages/Careers'
 import NotFound from './pages/NotFound'
 import PageTransition from './components/PageTransition'
+import ScrollToTop from './components/ScrollToTop'
 import WebPentest from './pages/pentest/WebPentest'
 import AIPentest from './pages/pentest/AIPentest'
 import MobilePentest from './pages/pentest/MobilePentest'
@@ -26,7 +27,9 @@ import ReportingHardening from './pages/process/ReportingHardening'
 
 const App = () => {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route element={<MainLayout />}>
         <Route
           index
@@ -206,6 +209,7 @@ const App = () => {
         }
       />
     </Routes>
+    </>
   )
 }
 

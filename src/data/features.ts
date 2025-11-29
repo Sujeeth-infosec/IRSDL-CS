@@ -24,3 +24,19 @@ export const featureShowcases = [
   },
 ]
 
+export const indianCompliance = [
+  'CERT-In Empanelled',
+  'RBI Cybersecurity Framework',
+  'IRDAI Guidelines Compliant',
+  'SEBI IT Framework',
+  'MeitY Standards',
+  'ISO 27001:2013 Certified',
+  'NPCI Security Standards',
+  'Data Localization Ready'
+]
+
+export const indianCities = [
+  'Mumbai', 'Delhi', 'Bengaluru', 'Hyderabad', 'Chennai', 
+  'Pune', 'Kolkata', 'Ahmedabad', 'Gurugram', 'Noida'
+]
+
