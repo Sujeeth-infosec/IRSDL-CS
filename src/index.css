@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #475569;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.cyber-grid {
+  background-image: radial-gradient(circle at center, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  backdrop-filter: blur(18px);
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.1), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(37, 99, 235, 0.08), transparent 60%),
+    linear-gradient(130deg, #ffffff 0%, #f8fafc 45%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.surface-light {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1e293b;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
