@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { MapPin, Phone, Mail } from 'lucide-react'
-import logo from '../assets/logo.svg'
 
 const Footer = () => {
   const year = new Date().getFullYear()
@@ -24,14 +23,16 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5 mb-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <img src={logo} alt="IRSDL Research & Thrive" className="h-12 mb-4" />
+            <Link to="/">
+              <img src="/logo.png" alt="IRSDL Research & Thrive" className="h-12 mb-4 hover:opacity-90 transition-opacity" />
+            </Link>
             <p className="text-sm text-slate-300 mb-6 max-w-sm">
               Elite cybersecurity and digital resilience for forward-looking enterprises across India.
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm text-slate-300">
                 <Phone className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                <span>+91 12345 67890</span>
+                <span>+91 94937 82350</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-slate-300">
                 <Mail className="h-4 w-4 text-blue-400 flex-shrink-0" />

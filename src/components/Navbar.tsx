@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Menu, X, Globe, Shield, Cloud, Smartphone, Network, Cpu } from 'lucide-react'
-import logo from '../assets/logo.svg'
 
 const navItems = [
   { path: '/', label: 'Home' },
@@ -51,9 +50,8 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-sm">
       <div className="flex items-center justify-between px-6 lg:px-12 py-4 relative">
-        <Link to="/" className="flex items-center gap-3 font-semibold text-lg text-blue-400">
-          <img src={logo} alt="IRSDL Research & Thrive" className="h-12 w-auto" />
-          <span className="sr-only">IRSDL CyberSecure</span>
+        <Link to="/" className="flex items-center gap-3 font-semibold text-lg">
+          <img src="/logo.png" alt="IRSDL Research & Thrive" className="h-12 w-auto hover:opacity-90 transition-opacity" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">

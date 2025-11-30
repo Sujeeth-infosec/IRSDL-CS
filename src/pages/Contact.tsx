@@ -9,7 +9,7 @@ const Contact = () => {
       title: 'Head Office',
       location: 'Tirupati, Andhra Pradesh',
       address: '23-7-169, 3rd Floor, Santhi Nagar, MR Palli Circle, Tirupati, AP - 517502',
-      phone: '+91 12345 67890',
+      phone: '+91 94937 82350',
       email: 'tirupati@irsdlcyber.com',
       hours: 'Mon-Sat: 9:00 AM - 6:00 PM'
     },
@@ -17,7 +17,7 @@ const Contact = () => {
       title: 'Bangalore Branch',
       location: 'Bangalore, Karnataka',
       address: '57 Novel Business Park, Gajendra Nager, Hosur Road, Anepalya, Bangalore - 560030',
-      phone: '+91 98765 43210',
+      phone: '+91 94937 82350',
       email: 'bangalore@irsdlcyber.com',
       hours: 'Mon-Sat: 9:00 AM - 6:00 PM'
     }
@@ -28,8 +28,8 @@ const Contact = () => {
       icon: Phone,
       title: 'Call Us',
       description: 'Speak with our security experts',
-      value: '+91 12345 67890',
-      action: 'tel:+911234567890',
+      value: '+91 94937 82350',
+      action: 'tel:+919493782350',
       color: 'from-blue-500 to-cyan-500'
     },
     {
@@ -184,10 +184,10 @@ const Contact = () => {
                   </div>
                 </div>
                 <a 
-                  href="tel:+919876543210"
+                  href="tel:+919493782350"
                   className="text-2xl font-bold text-white hover:text-red-400 transition"
                 >
-                  +91 98765 43210
+                  +91 94937 82350
                 </a>
                 <p className="text-gray-400 text-sm mt-2">
                   For immediate security incidents and breach response
@@ -253,7 +253,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="tel:+911234567890"
+                href="tel:+919493782350"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/50 transition-all"
               >
                 <Phone className="w-5 h-5" />
