@@ -48,9 +48,9 @@ const Navbar = () => {
   ]
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-sm">
-      <div className="flex items-center justify-between px-6 lg:px-12 py-4 relative">
-        <Link to="/" className="flex items-center gap-3 font-semibold text-lg">
+    <header className="fixed top-0 inset-x-0 z-50 bg-transparent backdrop-blur-md border-b border-slate-800/50 shadow-sm">
+      <div className="flex items-center justify-center px-6 lg:px-12 py-4 relative">
+        <Link to="/" className="absolute left-6 lg:left-12 flex items-center gap-3 font-semibold text-lg">
           <img src="/logo.png" alt="IRSDL Research & Thrive" className="h-12 w-auto hover:opacity-90 transition-opacity" />
         </Link>
 
@@ -143,15 +143,16 @@ const Navbar = () => {
               {item.label}
             </NavLink>
           ))}
-          <Link
-            to="/contact"
-            className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg shadow-blue-500/30 transition hover:-translate-y-0.5"
-          >
-            Start a Project
-          </Link>
         </nav>
 
-        <button className="md:hidden text-gray-300" onClick={() => setOpen((prev) => !prev)}>
+        <Link
+          to="/contact"
+          className="hidden md:block absolute right-6 lg:right-12 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg shadow-blue-500/30 transition hover:-translate-y-0.5"
+        >
+          Start a Project
+        </Link>
+
+        <button className="md:hidden absolute right-6 text-gray-300" onClick={() => setOpen((prev) => !prev)}>
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>

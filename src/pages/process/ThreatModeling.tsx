@@ -1,156 +1,228 @@
-import { Target, Shield, CheckCircle, FileText, Brain, Network } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { Target, Shield, CheckCircle, FileText, Brain, Network, ArrowRight, GitBranch, Lock } from 'lucide-react'
+import EnhancedHeroBackground from '../../components/EnhancedHeroBackground'
 
 const ThreatModeling = () => {
   const modelingApproaches = [
     {
+      icon: Target,
       title: 'STRIDE Analysis',
       description: 'Systematic threat identification using STRIDE methodology.',
-      threats: ['Spoofing', 'Tampering', 'Repudiation', 'Information Disclosure', 'Denial of Service', 'Elevation of Privilege'],
-      icon: '🎯',
+      threats: ['Spoofing', 'Tampering', 'Repudiation', 'Information Disclosure', 'Denial of Service', 'Elevation of Privilege']
     },
     {
+      icon: GitBranch,
       title: 'Attack Trees',
       description: 'Visual representation of attack paths and scenarios.',
-      threats: ['Attack path mapping', 'Threat scenario development', 'Risk prioritization', 'Countermeasure identification'],
-      icon: '🌳',
+      threats: ['Attack path mapping', 'Threat scenario development', 'Risk prioritization', 'Countermeasure identification']
     },
     {
+      icon: Network,
       title: 'Data Flow Diagrams',
       description: 'Mapping data flows and identifying trust boundaries.',
-      threats: ['Data flow analysis', 'Trust boundary identification', 'Entry point mapping', 'Data protection requirements'],
-      icon: '📊',
+      threats: ['Data flow analysis', 'Trust boundary identification', 'Entry point mapping', 'Data protection requirements']
     },
     {
+      icon: Lock,
       title: 'Threat Scenarios',
       description: 'Developing realistic attack scenarios based on threat intelligence.',
-      threats: ['Scenario development', 'Attack simulation', 'Impact assessment', 'Mitigation strategies'],
-      icon: '⚔️',
-    },
+      threats: ['Scenario development', 'Attack simulation', 'Impact assessment', 'Mitigation strategies']
+    }
   ]
 
   const outputs = [
-    { item: 'Threat Model Document', icon: FileText },
-    { item: 'Attack Tree Diagrams', icon: Network },
-    { item: 'Risk Assessment Matrix', icon: Shield },
-    { item: 'Mitigation Roadmap', icon: Brain },
+    { item: 'Threat Model Document', icon: FileText, count: '30+' },
+    { item: 'Attack Tree Diagrams', icon: Network, count: '15+' },
+    { item: 'Risk Assessment Matrix', icon: Shield, count: '50+' },
+    { item: 'Mitigation Roadmap', icon: Brain, count: '40+' }
+  ]
+
+  const processSteps = [
+    { phase: '01', title: 'System Modeling', description: 'Map architecture and data flows' },
+    { phase: '02', title: 'Threat Identification', description: 'Identify potential threats' },
+    { phase: '03', title: 'Risk Assessment', description: 'Evaluate threat severity' },
+    { phase: '04', title: 'Mitigation Planning', description: 'Develop countermeasures' }
   ]
 
   return (
-    <div className="min-h-screen">
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-midnight to-midnight" />
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=80')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+    <div className="relative min-h-screen bg-slate-900">
+      
+      {/* Hero Section with Background Image */}
+      <section className="relative w-full min-h-[600px] flex items-center justify-center py-24 pt-32">
+        <EnhancedHeroBackground 
+          imageUrl="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=80"
+          gradientFrom="blue-500"
+          gradientTo="cyan-500"
         />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Target className="h-4 w-4" />
-              Phase 02: Threat Modeling
+
+        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12" style={{ zIndex: 10 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <div className="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-6 py-3 mb-8">
+              <Target className="w-5 h-5 text-blue-400" />
+              <span className="text-sm font-medium text-blue-300">Phase 02: Threat Modeling</span>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            
+            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Threat Modeling &
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-500">
+              <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 Risk Assessment
               </span>
             </h1>
-            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+            
+            <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
               Systematic threat modeling using STRIDE, attack trees, and data flow analysis. Identifying threats,
               assessing risks, and developing mitigation strategies before exploitation.
             </p>
-            <div className="flex flex-wrap gap-4">
+
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
               <Link
                 to="/contact"
-                className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:scale-105 transition"
+                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/50 transition-all flex items-center gap-2"
               >
                 Start Threat Modeling
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/contact"
+                className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
+              >
+                Watch Demo
               </Link>
             </div>
-          </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+              {processSteps.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+                    {stat.phase}
+                  </div>
+                  <div className="text-white font-semibold text-sm mb-1">{stat.title}</div>
+                  <div className="text-gray-400 text-xs">{stat.description}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="py-20 bg-midnight">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Threat Modeling Approaches</h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-              Comprehensive threat modeling methodologies
-            </p>
-          </div>
+      {/* Modeling Approaches Section */}
+      <section className="relative w-full py-24 bg-slate-900">
+
+        <div className="w-full px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Our Methodology</span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">
+              Threat Modeling Approaches
+            </h2>
+          </motion.div>
+
           <div className="grid md:grid-cols-2 gap-6">
             {modelingApproaches.map((approach, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="glass-panel rounded-3xl p-8 hover:border-blue-500/30 transition"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 hover:border-blue-500/50 transition-all"
               >
-                <div className="text-5xl mb-4">{approach.icon}</div>
-                <h3 className="text-2xl font-bold text-white mb-3">{approach.title}</h3>
-                <p className="text-slate-300 mb-4">{approach.description}</p>
-                <div className="pt-4 border-t border-slate-700">
-                  <p className="text-xs text-slate-400 mb-2">Components:</p>
-                  <ul className="space-y-2">
-                    {approach.threats.map((threat, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-slate-300 text-sm">
-                        <CheckCircle className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
-                        <span>{threat}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="p-4 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 inline-flex mb-4">
+                  <approach.icon className="w-8 h-8 text-white" />
                 </div>
-              </div>
+                <h3 className="text-2xl font-bold text-white mb-3">{approach.title}</h3>
+                <p className="text-gray-400 mb-4">{approach.description}</p>
+                <div className="space-y-2">
+                  {approach.threats.map((threat, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
+                      <CheckCircle className="w-4 h-4 text-blue-400" />
+                      <span>{threat}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-midnight to-mist">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="glass-panel rounded-3xl p-10">
-            <div className="text-center mb-12">
-              <Target className="h-16 w-16 text-blue-400 mx-auto mb-4" />
-              <h2 className="text-4xl font-bold text-white mb-4">Threat Modeling Outputs</h2>
-              <p className="text-slate-400 text-lg">
-                Comprehensive documentation and analysis from threat modeling phase
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {outputs.map((item, index) => (
-                <div
-                  key={index}
-                  className="text-center p-6 bg-midnight/50 rounded-2xl border border-slate-700"
-                >
-                  <item.icon className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-                  <p className="text-white font-semibold">{item.item}</p>
-                </div>
-              ))}
-            </div>
+      {/* Outputs Section */}
+      <section className="relative w-full py-24 bg-gradient-to-b from-slate-900 to-slate-800">
+        <div className="w-full px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Deliverables</span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">
+              Threat Modeling Outputs
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {outputs.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 text-center hover:border-blue-500/50 transition-all"
+              >
+                <item.icon className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+                <p className="text-white font-semibold mb-2">{item.item}</p>
+                <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">{item.count}</p>
+                <p className="text-xs text-gray-400 mt-1">Threat Models</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Begin Threat Modeling Phase
-          </h2>
-          <p className="text-xl text-white/90 mb-8">
-            Get systematic threat modeling and risk assessment. Identify threats and develop mitigation strategies
-            before penetration testing execution.
-          </p>
-          <Link
-            to="/contact"
-            className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold shadow-xl hover:scale-105 transition inline-block"
+      {/* CTA Section */}
+      <section className="relative w-full py-24 bg-slate-800">
+        <div className="w-full px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-xl border border-blue-400/30 rounded-2xl p-12 text-center"
           >
-            Start Threat Modeling
-          </Link>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Begin Threat Modeling Phase
+            </h2>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
+              Get systematic threat modeling and risk assessment. Identify threats and develop mitigation strategies
+              before penetration testing execution.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/50 transition-all"
+              >
+                Start Threat Modeling
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <a
+                href="tel:+919493782350"
+                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
+              >
+                Call: +91 94937 82350
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>
@@ -158,4 +230,3 @@ const ThreatModeling = () => {
 }
 
 export default ThreatModeling
-

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { DollarSign, Shield, CheckCircle, ArrowRight, Lock, CreditCard, Smartphone, TrendingUp } from 'lucide-react'
-import SimpleBackground from '../../components/SimpleBackground'
+import ThemedBackground from '../../components/ThemedBackground'
 
 const Fintech = () => {
   const challenges = [
@@ -62,8 +62,8 @@ const Fintech = () => {
   ]
 
   return (
-    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 min-h-screen">
-      <SimpleBackground />
+    <div className="relative min-h-screen">
+      <ThemedBackground theme="green" />
       
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-20">

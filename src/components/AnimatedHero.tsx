@@ -5,10 +5,7 @@ import { Shield, Zap, Lock, ArrowRight, CheckCircle2 } from 'lucide-react'
 const AnimatedHero = () => {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 w-full bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-        <div className="absolute inset-0 w-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyNTYzZWIiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHptMC0xMGMwLTIuMjEtMS43OS00LTQtNHMtNCAxLjc5LTQgNCAxLjc5IDQgNCA0IDQtMS43OSA0LTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
-      </div>
+      {/* Removed solid background - using AdvancedBackground instead */}
 
       <div className="w-full px-6 lg:px-12 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-[1600px] mx-auto">
@@ -91,7 +88,7 @@ const AnimatedHero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Animated Cards */}
+          {/* Right Content - Hero Image with Floating Cards */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -99,27 +96,49 @@ const AnimatedHero = () => {
             className="relative"
           >
             <div className="relative">
+              {/* PROMINENT Hero Image */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-blue-400/30">
+                <img 
+                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80" 
+                  alt="Cybersecurity Operations" 
+                  className="w-full h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
+                
+                {/* Overlay Stats */}
+                <div className="absolute bottom-6 left-6 right-6 flex gap-4">
+                  <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
+                    <p className="text-3xl font-bold text-white">500+</p>
+                    <p className="text-gray-300 text-sm">Clients Protected</p>
+                  </div>
+                  <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
+                    <p className="text-3xl font-bold text-white">24/7</p>
+                    <p className="text-gray-300 text-sm">SOC Monitoring</p>
+                  </div>
+                </div>
+              </div>
+
               {/* Floating Cards */}
               <motion.div
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 right-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-xl border border-blue-400/30 rounded-2xl p-6 shadow-2xl"
+                className="absolute -top-6 -right-6 bg-gradient-to-br from-blue-500/90 to-cyan-500/90 backdrop-blur-xl border border-blue-400/50 rounded-2xl p-6 shadow-2xl z-10"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="bg-blue-500 rounded-lg p-2">
+                  <div className="bg-white/20 rounded-lg p-2">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <p className="text-white font-semibold">Threat Detected</p>
-                    <p className="text-gray-400 text-sm">Blocked in real-time</p>
+                    <p className="text-blue-100 text-sm">Blocked in real-time</p>
                   </div>
                 </div>
-                <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+                <div className="h-2 bg-white/20 rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: '100%' }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="h-full bg-gradient-to-r from-blue-500 to-cyan-500"
+                    className="h-full bg-white"
                   />
                 </div>
               </motion.div>
@@ -127,23 +146,18 @@ const AnimatedHero = () => {
               <motion.div
                 animate={{ y: [0, 20, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-0 left-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-400/30 rounded-2xl p-6 shadow-2xl"
+                className="absolute -bottom-6 -left-6 bg-gradient-to-br from-purple-500/90 to-pink-500/90 backdrop-blur-xl border border-purple-400/50 rounded-2xl p-6 shadow-2xl z-10"
               >
                 <div className="flex items-center gap-3">
-                  <div className="bg-purple-500 rounded-lg p-2">
+                  <div className="bg-white/20 rounded-lg p-2">
                     <Lock className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <p className="text-white font-semibold">Security Score</p>
-                    <p className="text-3xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">98%</p>
+                    <p className="text-4xl font-bold text-white">98%</p>
                   </div>
                 </div>
               </motion.div>
-
-              {/* Center Glow */}
-              <div className="relative w-96 h-96 mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-              </div>
             </div>
           </motion.div>
         </div>

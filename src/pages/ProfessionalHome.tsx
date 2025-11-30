@@ -1,6 +1,5 @@
 import AnimatedHero from '../components/AnimatedHero'
-import SimpleBackground from '../components/SimpleBackground'
-import ParticleNetwork from '../components/ParticleNetwork'
+import AdvancedBackground from '../components/AdvancedBackground'
 import EnhancedServices from '../components/EnhancedServices'
 import InteractiveFeatures from '../components/InteractiveFeatures'
 import AnimatedStats from '../components/AnimatedStats'
@@ -9,9 +8,8 @@ import CTASection from '../components/CTASection'
 
 const ProfessionalHome = () => {
   return (
-    <div className="relative bg-slate-900">
-      <SimpleBackground />
-      <ParticleNetwork />
+    <div className="relative">
+      <AdvancedBackground />
       <AnimatedHero />
       <EnhancedServices />
       <InteractiveFeatures />
