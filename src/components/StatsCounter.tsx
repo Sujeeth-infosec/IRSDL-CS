@@ -5,9 +5,10 @@ type StatsCounterProps = {
   label: string
   value: number
   suffix?: string
+  dark?: boolean
 }
 
-const StatsCounter = ({ label, value, suffix = '' }: StatsCounterProps) => {
+const StatsCounter = ({ label, value, suffix = '', dark = false }: StatsCounterProps) => {
   const ref = useRef<HTMLDivElement | null>(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
   const [displayValue, setDisplayValue] = useState(0)
@@ -28,16 +29,27 @@ const StatsCounter = ({ label, value, suffix = '' }: StatsCounterProps) => {
     requestAnimationFrame(update)
   }, [isInView, value])
 
+  if (dark) {
+    return (
+      <div ref={ref} className="text-center">
+        <p className="text-4xl font-bold text-white mb-2">
+          {displayValue.toLocaleString()}
+          {suffix}
+        </p>
+        <p className="text-sm text-blue-100">{label}</p>
+      </div>
+    )
+  }
+
   return (
-    <div ref={ref} className="bg-white rounded-2xl p-6 border border-slate-100 shadow-panel/30">
-      <p className="text-3xl font-bold text-primary">
+    <div ref={ref} className="text-center">
+      <p className="text-4xl font-bold text-blue-600 mb-2">
         {displayValue.toLocaleString()}
         {suffix}
       </p>
-      <p className="text-sm text-slate-600 mt-2">{label}</p>
+      <p className="text-sm text-slate-600">{label}</p>
     </div>
   )
 }
 
 export default StatsCounter
-
