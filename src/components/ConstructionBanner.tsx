@@ -1,4 +1,3 @@
-import { span } from 'framer-motion/client'
 import { Construction } from 'lucide-react'
 
 const ConstructionBanner = () => {

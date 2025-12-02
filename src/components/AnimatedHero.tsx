@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Shield, Zap, Lock, ArrowRight, CheckCircle2, Play } from 'lucide-react'
+import { Shield, Lock, ArrowRight, Play } from 'lucide-react'
 
 const AnimatedHero = () => {
   const handleWatchDemo = () => {
