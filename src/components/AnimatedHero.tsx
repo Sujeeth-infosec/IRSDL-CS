@@ -1,39 +1,67 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Shield, Zap, Lock, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { Shield, Zap, Lock, ArrowRight, CheckCircle2, Play } from 'lucide-react'
 
 const AnimatedHero = () => {
+  const handleWatchDemo = () => {
+    // Open demo video or modal
+    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')
+  }
+
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Removed solid background - using AdvancedBackground instead */}
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-blue-500/30 rounded-full"
+            initial={{
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+            }}
+            animate={{
+              y: [null, Math.random() * window.innerHeight],
+              x: [null, Math.random() * window.innerWidth],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        ))}
+      </div>
 
-      <div className="w-full px-6 lg:px-12 py-20 relative z-10">
+      <div className="w-full px-6 lg:px-12 py-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-[1600px] mx-auto">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-white"
+            className="text-gray-900"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-4 py-2 mb-6"
+              className="inline-flex items-center gap-2 bg-blue-50 backdrop-blur-sm border border-blue-200 rounded-full px-4 py-2 mb-6"
             >
-              <Zap className="w-4 h-4 text-blue-400" />
-              <span className="text-sm font-medium">India's Premier Cybersecurity Partner</span>
+              <Zap className="w-4 h-4 text-blue-600" />
+              <span className="text-sm font-semibold text-blue-700">India's Premier Cybersecurity Partner</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl lg:text-7xl font-bold mb-6 leading-tight"
+              className="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900"
             >
               Secure Your
-              <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-700 bg-clip-text text-transparent">
                 Digital Future
               </span>
             </motion.h1>
@@ -42,7 +70,7 @@ const AnimatedHero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl text-gray-300 mb-8 leading-relaxed"
+              className="text-xl text-gray-700 mb-8 leading-relaxed font-medium"
             >
               CERT-In aligned cybersecurity solutions with 24/7 SOC monitoring, 
               advanced threat intelligence, and rapid incident response for Indian enterprises.
@@ -56,17 +84,24 @@ const AnimatedHero = () => {
             >
               <Link
                 to="/contact"
-                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/50 transition-all flex items-center gap-2"
+                className="group bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/50 transition-all flex items-center gap-2 hover:scale-105"
               >
-                Get Started
+                Secure Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                to="/services"
-                className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
+                to="/contact"
+                className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold transition-all hover:scale-105"
               >
-                Our Services
+                Schedule Call
               </Link>
+              <button
+                onClick={handleWatchDemo}
+                className="bg-white/5 backdrop-blur-sm hover:bg-white/10 text-white border border-white/20 px-6 py-4 rounded-full font-semibold transition-all flex items-center gap-2 hover:scale-105"
+              >
+                <Play className="w-5 h-5" />
+                Watch Demo
+              </button>
             </motion.div>
 
             <motion.div
@@ -80,9 +115,9 @@ const AnimatedHero = () => {
                 { icon: Lock, text: 'ISO 27001 Certified' },
                 { icon: CheckCircle2, text: '99.9% Uptime' }
               ].map((item, index) => (
-                <div key={index} className="flex items-center gap-2 text-gray-300">
-                  <item.icon className="w-5 h-5 text-blue-400" />
-                  <span className="text-sm font-medium">{item.text}</span>
+                <div key={index} className="flex items-center gap-2 text-gray-700">
+                  <item.icon className="w-5 h-5 text-blue-600" />
+                  <span className="text-sm font-semibold">{item.text}</span>
                 </div>
               ))}
             </motion.div>
@@ -156,6 +191,21 @@ const AnimatedHero = () => {
                     <p className="text-white font-semibold">Security Score</p>
                     <p className="text-4xl font-bold text-white">98%</p>
                   </div>
+                </div>
+              </motion.div>
+
+              {/* Additional floating card */}
+              <motion.div
+                animate={{ 
+                  y: [0, -15, 0],
+                  rotate: [0, 5, 0]
+                }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="absolute top-1/2 -right-12 bg-gradient-to-br from-green-500/90 to-emerald-500/90 backdrop-blur-xl border border-green-400/50 rounded-2xl p-4 shadow-2xl z-10"
+              >
+                <div className="text-center">
+                  <p className="text-white font-semibold text-sm mb-1">Uptime</p>
+                  <p className="text-3xl font-bold text-white">99.9%</p>
                 </div>
               </motion.div>
             </div>

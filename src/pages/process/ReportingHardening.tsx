@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FileText, Shield, CheckCircle, Target, TrendingUp, Lock, ArrowRight, Settings, Award } from 'lucide-react'
-import EnhancedHeroBackground from '../../components/EnhancedHeroBackground'
+import ThemedBackground from '../../components/ThemedBackground'
 
 const ReportingHardening = () => {
   const reportComponents = [
@@ -53,17 +53,12 @@ const ReportingHardening = () => {
   ]
 
   return (
-    <div className="relative min-h-screen bg-slate-900">
+    <div className="relative min-h-screen">
+      <ThemedBackground theme="green" />
       
-      {/* Hero Section with Background Image */}
-      <section className="relative w-full min-h-[600px] flex items-center justify-center py-24 pt-32">
-        <EnhancedHeroBackground 
-          imageUrl="https://images.unsplash.com/photo-1454165804606-c3d57b86b6bb?auto=format&fit=crop&w=2000&q=80"
-          gradientFrom="green-500"
-          gradientTo="emerald-500"
-        />
-
-        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12" style={{ zIndex: 10 }}>
+      {/* Hero Section */}
+      <section className="relative w-full pt-32 pb-20">
+        <div className="w-full px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,14 +69,14 @@ const ReportingHardening = () => {
               <span className="text-sm font-medium text-green-300">Phase 04: Reporting & Hardening</span>
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Reporting &
               <span className="block bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
                 Security Hardening
               </span>
             </h1>
             
-            <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 mb-10 leading-relaxed max-w-3xl mx-auto">
               Comprehensive reporting with executive summaries, technical details, and prioritized remediation
               roadmaps. Follow-up security hardening services to strengthen your defenses.
             </p>
@@ -89,14 +84,14 @@ const ReportingHardening = () => {
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <Link
                 to="/contact"
-                className="group bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-green-500/50 transition-all flex items-center gap-2"
+                className="group bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-gray-900 px-8 py-4 rounded-full font-semibold shadow-lg shadow-green-500/50 transition-all flex items-center gap-2"
               >
                 Get Security Report
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/contact"
-                className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
+                className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-gray-900 border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
               >
                 Watch Demo
               </Link>
@@ -109,8 +104,8 @@ const ReportingHardening = () => {
                   <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-2">
                     {stat.phase}
                   </div>
-                  <div className="text-white font-semibold text-sm mb-1">{stat.title}</div>
-                  <div className="text-gray-400 text-xs">{stat.description}</div>
+                  <div className="text-gray-900 font-semibold text-sm mb-1">{stat.title}</div>
+                  <div className="text-gray-600 text-xs">{stat.description}</div>
                 </div>
               ))}
             </div>
@@ -119,7 +114,7 @@ const ReportingHardening = () => {
       </section>
 
       {/* Report Components Section */}
-      <section className="relative w-full py-24 bg-slate-900">
+      <section className="relative w-full py-24 bg-white">
 
         <div className="w-full px-6 lg:px-12">
           <motion.div
@@ -129,7 +124,7 @@ const ReportingHardening = () => {
             className="text-center mb-16"
           >
             <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Report Structure</span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
               Report Components
             </h2>
           </motion.div>
@@ -142,16 +137,16 @@ const ReportingHardening = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 hover:border-green-500/50 transition-all"
+                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-8 hover:border-green-500/50 transition-all"
               >
                 <div className="p-4 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 inline-flex mb-4">
-                  <component.icon className="w-8 h-8 text-white" />
+                  <component.icon className="w-8 h-8 text-gray-900" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{component.title}</h3>
-                <p className="text-gray-400 mb-4">{component.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{component.title}</h3>
+                <p className="text-gray-600 mb-4">{component.description}</p>
                 <div className="space-y-2">
                   {component.contents.map((content, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
+                    <div key={idx} className="flex items-center gap-2 text-gray-700 text-sm">
                       <CheckCircle className="w-4 h-4 text-green-400" />
                       <span>{content}</span>
                     </div>
@@ -173,7 +168,7 @@ const ReportingHardening = () => {
             className="text-center mb-16"
           >
             <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Documentation</span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
               Report Deliverables
             </h2>
           </motion.div>
@@ -186,12 +181,12 @@ const ReportingHardening = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 text-center hover:border-green-500/50 transition-all"
+                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-6 text-center hover:border-green-500/50 transition-all"
               >
                 <item.icon className="w-12 h-12 text-green-400 mx-auto mb-4" />
-                <p className="text-white font-semibold mb-2">{item.item}</p>
+                <p className="text-gray-900 font-semibold mb-2">{item.item}</p>
                 <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">{item.pages}</p>
-                <p className="text-xs text-gray-400 mt-1">Pages</p>
+                <p className="text-xs text-gray-600 mt-1">Pages</p>
               </motion.div>
             ))}
           </div>
@@ -199,7 +194,7 @@ const ReportingHardening = () => {
       </section>
 
       {/* Hardening Services Section */}
-      <section className="relative w-full py-24 bg-slate-800">
+      <section className="relative w-full py-24 bg-gray-50">
         <div className="w-full px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -208,7 +203,7 @@ const ReportingHardening = () => {
             className="text-center mb-16"
           >
             <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Follow-up Services</span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
               Security Hardening Services
             </h2>
           </motion.div>
@@ -221,12 +216,12 @@ const ReportingHardening = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 text-center hover:border-green-500/50 transition-all"
+                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-6 text-center hover:border-green-500/50 transition-all"
               >
                 <item.icon className="w-12 h-12 text-green-400 mx-auto mb-4" />
-                <p className="text-white font-semibold mb-2">{item.service}</p>
+                <p className="text-gray-900 font-semibold mb-2">{item.service}</p>
                 <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">{item.count}</p>
-                <p className="text-xs text-gray-400 mt-1">Implementations</p>
+                <p className="text-xs text-gray-600 mt-1">Implementations</p>
               </motion.div>
             ))}
           </div>
@@ -234,7 +229,7 @@ const ReportingHardening = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative w-full py-24 bg-slate-900">
+      <section className="relative w-full py-24 bg-white">
         <div className="w-full px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -242,24 +237,24 @@ const ReportingHardening = () => {
             viewport={{ once: true }}
             className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl border border-green-400/30 rounded-2xl p-12 text-center"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Get Your Security Report & Hardening Plan
             </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
               Receive comprehensive security reports with prioritized remediation roadmaps. Follow up with security
               hardening services to strengthen your defenses.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-green-500/50 transition-all"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-gray-900 px-8 py-4 rounded-full font-semibold shadow-lg shadow-green-500/50 transition-all"
               >
                 Request Security Report
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a
                 href="tel:+919493782350"
-                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
+                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-gray-900 border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
               >
                 Call: +91 94937 82350
               </a>

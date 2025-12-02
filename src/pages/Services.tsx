@@ -14,12 +14,13 @@ import {
   Landmark,
   ArrowRight,
   CheckCircle,
-  Zap,
-  Lock,
-  Eye,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import SimpleBackground from '../components/SimpleBackground'
+import PentestOverview from '../components/PentestOverview'
+import SecurityAssessments from '../components/SecurityAssessments'
+import SocialEngineeringSection from '../components/SocialEngineeringSection'
+import ComplianceServices from '../components/ComplianceServices'
 
 const iconMap: Record<string, LucideIcon> = {
   vapt: Shield,
@@ -48,8 +49,14 @@ const colorMap: Record<string, string> = {
 }
 
 const Services = () => {
+  const stats = [
+    { value: '500+', label: 'Security Assessments Completed', color: 'text-blue-600' },
+    { value: '99.8%', label: 'Client Satisfaction Rate', color: 'text-green-600' },
+    { value: '24/7', label: 'Security Operations Center', color: 'text-purple-600' },
+    { value: '15+', label: 'Years Combined Experience', color: 'text-orange-600' }
+  ]
   return (
-    <div className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 min-h-screen">
+    <div className="relative bg-white min-h-screen">
       <SimpleBackground />
       
       {/* Hero Section */}
@@ -63,43 +70,28 @@ const Services = () => {
               className="text-center mb-16"
             >
               <div className="inline-flex items-center gap-2 bg-blue-500/10 backdrop-blur-sm border border-blue-400/20 rounded-full px-6 py-3 mb-8">
-                <Shield className="w-5 h-5 text-blue-400" />
+                <Shield className="w-5 h-5 text-blue-600" />
                 <span className="text-sm font-medium text-blue-300">Comprehensive Security Services</span>
               </div>
               
-              <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
                 Cybersecurity Without
                 <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   Compromises
                 </span>
               </h1>
               
-              <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Whether you need deep offensive testing, cloud guardrails, or 24/7 detection and response, 
-                we deploy the exact team and tooling stack you need.
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Enterprise-grade security services tailored for Indian businesses.
               </p>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                {[
-                  { icon: Shield, value: '10+', label: 'Services' },
-                  { icon: Zap, value: '500+', label: 'Projects' },
-                  { icon: Lock, value: '99%', label: 'Success Rate' },
-                  { icon: Eye, value: '24/7', label: 'Support' }
-                ].map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.1 + 0.5 }}
-                    className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6"
-                  >
-                    <stat.icon className="w-8 h-8 text-blue-400 mx-auto mb-3" />
-                    <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                      {stat.value}
-                    </div>
-                    <div className="text-gray-400 text-sm">{stat.label}</div>
-                  </motion.div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
+                {stats.map((stat, index) => (
+                  <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-gray-200">
+                    <div className={`text-3xl font-bold ${stat.color} mb-1`}>{stat.value}</div>
+                    <div className="text-gray-600 text-xs">{stat.label}</div>
+                  </div>
                 ))}
               </div>
             </motion.div>
@@ -128,31 +120,31 @@ const Services = () => {
                       to={`/services/${service.slug}`}
                       className="group block h-full"
                     >
-                      <div className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-blue-400/50 rounded-2xl p-8 h-full transition-all hover:bg-white/10 hover:scale-105">
+                      <div className="bg-white border border-gray-200 hover:border-blue-400 rounded-2xl p-8 h-full transition-all hover:shadow-xl hover:scale-105">
                         {/* Icon */}
                         <div className="flex items-start justify-between mb-6">
                           <div className={`p-4 rounded-xl bg-gradient-to-br ${gradient} shadow-lg`}>
-                            <Icon className="w-8 h-8 text-white" />
+                            <Icon className="w-8 h-8 text-gray-900" />
                           </div>
-                          <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                          <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                           {service.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+                        <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                           {service.tagline}
                         </p>
 
                         {/* Key Benefits */}
-                        <div className="space-y-2 pt-4 border-t border-white/10">
+                        <div className="space-y-2 pt-4 border-t border-gray-200">
                           {service.benefits.slice(0, 2).map((benefit, i) => (
                             <div key={i} className="flex items-start gap-2">
-                              <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                              <span className="text-gray-400 text-xs leading-relaxed">{benefit}</span>
+                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                              <span className="text-gray-600 text-xs leading-relaxed">{benefit}</span>
                             </div>
                           ))}
                         </div>
@@ -162,13 +154,13 @@ const Services = () => {
                           {service.tools.slice(0, 3).map((tool, i) => (
                             <span
                               key={i}
-                              className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-400"
+                              className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-600"
                             >
                               {tool}
                             </span>
                           ))}
                           {service.tools.length > 3 && (
-                            <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-400">
+                            <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-600">
                               +{service.tools.length - 3} more
                             </span>
                           )}
@@ -183,6 +175,12 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Detailed Service Sections */}
+      <PentestOverview />
+      <SecurityAssessments />
+      <SocialEngineeringSection />
+      <ComplianceServices />
+
       {/* CTA Section */}
       <section className="relative w-full pb-20">
         <div className="w-full px-6 lg:px-12">
@@ -193,24 +191,24 @@ const Services = () => {
               viewport={{ once: true }}
               className="bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-purple-500/20 backdrop-blur-xl border border-blue-400/30 rounded-3xl p-12 text-center"
             >
-              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Need a Custom Security Solution?
               </h2>
-              <p className="text-gray-300 mb-8 text-lg max-w-2xl mx-auto">
+              <p className="text-gray-700 mb-8 text-lg max-w-2xl mx-auto">
                 Our experts can design a tailored security program that fits your unique requirements. 
                 Let's discuss your security challenges.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/50 transition-all"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-gray-900 px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/50 transition-all"
                 >
                   Schedule Consultation
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
                   href="tel:+919493782350"
-                  className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
+                  className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-gray-900 border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
                 >
                   Call: +91 94937 82350
                 </a>
@@ -224,4 +222,5 @@ const Services = () => {
 }
 
 export default Services
+
 

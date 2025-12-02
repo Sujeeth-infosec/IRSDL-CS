@@ -35,7 +35,7 @@ const ModernTestimonials = () => {
   const duplicatedTestimonials = [...testimonials, ...testimonials]
 
   return (
-    <section className="relative w-full py-20 overflow-hidden">
+    <section className="relative w-full py-10 overflow-hidden">
       <div className="w-full px-6 lg:px-12">
         {/* Header */}
         <motion.div
@@ -49,10 +49,10 @@ const ModernTestimonials = () => {
             <span className="text-sm font-medium text-blue-300">Client Testimonials</span>
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Trusted by Indian Enterprises
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-600 text-lg">
             See what leading organizations say about our cybersecurity services
           </p>
         </motion.div>
@@ -83,7 +83,7 @@ const ModernTestimonials = () => {
                   {/* Quote Icon */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="p-2 rounded-lg bg-blue-500/20 border border-blue-400/30">
-                      <Quote className="w-5 h-5 text-blue-400" />
+                      <Quote className="w-5 h-5 text-blue-600" />
                     </div>
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
@@ -93,7 +93,7 @@ const ModernTestimonials = () => {
                   </div>
 
                   {/* Message */}
-                  <p className="text-gray-300 text-sm leading-relaxed mb-6 line-clamp-4">
+                  <p className="text-gray-700 text-sm leading-relaxed mb-6 line-clamp-4">
                     "{testimonial.message}"
                   </p>
 
@@ -106,10 +106,10 @@ const ModernTestimonials = () => {
                       loading="lazy"
                     />
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-white text-sm truncate">
+                      <p className="font-semibold text-gray-900 text-sm truncate">
                         {testimonial.author}
                       </p>
-                      <p className="text-gray-400 text-xs truncate">
+                      <p className="text-gray-600 text-xs truncate">
                         {testimonial.role}, {testimonial.company}
                       </p>
                       <div className="flex items-center gap-1 text-gray-500 text-xs mt-1">
@@ -144,7 +144,7 @@ const ModernTestimonials = () => {
               <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-1">
                 {stat.value}
               </div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
+              <div className="text-gray-600 text-sm">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -154,3 +154,4 @@ const ModernTestimonials = () => {
 }
 
 export default ModernTestimonials
+

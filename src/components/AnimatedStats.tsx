@@ -39,9 +39,9 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 
 const AnimatedStats = () => {
   return (
-    <section className="py-24 w-full relative overflow-hidden">
+    <section className="py-10 w-full relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 w-full bg-gradient-to-b from-slate-900 via-blue-900/20 to-slate-900"></div>
+      <div className="absolute inset-0 w-full bg-gradient-to-b from-slate-900 via-blue-900/20 to-white"></div>
       
       <div className="w-full px-6 lg:px-12 relative z-10">
         <motion.div
@@ -51,7 +51,7 @@ const AnimatedStats = () => {
           className="text-center mb-16"
         >
           <span className="text-blue-500 font-semibold text-sm uppercase tracking-wider">Our Impact</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
             Trusted by Industry Leaders
           </h2>
         </motion.div>
@@ -67,13 +67,13 @@ const AnimatedStats = () => {
               whileHover={{ scale: 1.05 }}
               className="relative group"
             >
-              <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 text-center overflow-hidden">
+              <div className="relative bg-gradient-to-br from-gray-50/50 to-white/50 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-8 text-center overflow-hidden">
                 {/* Animated gradient background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                 
                 {/* Icon */}
                 <div className={`relative inline-flex p-4 rounded-xl bg-gradient-to-br ${stat.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <stat.icon className="w-8 h-8 text-white" />
+                  <stat.icon className="w-8 h-8 text-gray-900" />
                 </div>
 
                 {/* Value */}
@@ -82,7 +82,7 @@ const AnimatedStats = () => {
                 </div>
 
                 {/* Label */}
-                <p className="text-gray-400 font-medium text-lg">
+                <p className="text-gray-600 font-medium text-lg">
                   {stat.label}
                 </p>
 
@@ -98,3 +98,4 @@ const AnimatedStats = () => {
 }
 
 export default AnimatedStats
+

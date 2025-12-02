@@ -70,10 +70,10 @@ const InteractiveFeatures = () => {
           className="text-center mb-16"
         >
           <span className="text-blue-500 font-semibold text-sm uppercase tracking-wider">Features</span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
             Enterprise-Grade Security Platform
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Built for Indian enterprises with local compliance and regulatory requirements
           </p>
         </motion.div>
@@ -91,23 +91,23 @@ const InteractiveFeatures = () => {
                 onClick={() => setActiveFeature(feature.id)}
                 className={`cursor-pointer p-6 rounded-2xl border transition-all duration-300 ${
                   activeFeature === feature.id
-                    ? 'bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-blue-500/50 shadow-lg shadow-blue-500/20'
-                    : 'bg-slate-800/30 border-slate-700/50 hover:border-slate-600/50'
+                    ? 'bg-gradient-to-br from-gray-50/80 to-white/80 border-blue-500/50 shadow-lg shadow-blue-500/20'
+                    : 'bg-gray-50/30 border-gray-200/50 hover:border-slate-600/50'
                 }`}
               >
                 <div className="flex items-start gap-4">
                   <div className={`p-3 rounded-xl bg-gradient-to-br ${feature.color} ${
                     activeFeature === feature.id ? 'scale-110' : ''
                   } transition-transform duration-300`}>
-                    <feature.icon className="w-6 h-6 text-white" />
+                    <feature.icon className="w-6 h-6 text-gray-900" />
                   </div>
                   <div className="flex-1">
                     <h3 className={`text-xl font-bold mb-2 ${
-                      activeFeature === feature.id ? 'text-white' : 'text-gray-300'
+                      activeFeature === feature.id ? 'text-gray-900' : 'text-gray-700'
                     }`}>
                       {feature.title}
                     </h3>
-                    <p className="text-gray-400 text-sm">
+                    <p className="text-gray-600 text-sm">
                       {feature.description}
                     </p>
                   </div>
@@ -130,19 +130,19 @@ const InteractiveFeatures = () => {
                 transition={{ duration: 0.3 }}
                 className="relative"
               >
-                <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 overflow-hidden">
+                <div className="relative bg-gradient-to-br from-gray-50/50 to-white/50 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-8 overflow-hidden">
                   {/* Gradient overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-5`}></div>
                   
                   <div className="relative">
                     <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${feature.color} mb-6`}>
-                      <feature.icon className="w-10 h-10 text-white" />
+                      <feature.icon className="w-10 h-10 text-gray-900" />
                     </div>
 
-                    <h3 className="text-3xl font-bold text-white mb-4">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-300 text-lg mb-8">
+                    <p className="text-gray-700 text-lg mb-8">
                       {feature.description}
                     </p>
 
@@ -156,7 +156,7 @@ const InteractiveFeatures = () => {
                           className="flex items-start gap-3"
                         >
                           <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-300">{detail}</span>
+                          <span className="text-gray-700">{detail}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -175,3 +175,4 @@ const InteractiveFeatures = () => {
 }
 
 export default InteractiveFeatures
+

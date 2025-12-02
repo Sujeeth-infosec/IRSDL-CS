@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Search, Shield, CheckCircle, FileText, Target, Zap, ArrowRight, Database, Globe, Sparkles } from 'lucide-react'
-import EnhancedHeroBackground from '../../components/EnhancedHeroBackground'
+import ThemedBackground from '../../components/ThemedBackground'
 
 const SecurityResearch = () => {
   const researchAreas = [
@@ -46,17 +46,12 @@ const SecurityResearch = () => {
   ]
 
   return (
-    <div className="relative min-h-screen bg-slate-900">
+    <div className="relative min-h-screen">
+      <ThemedBackground theme="purple" />
       
-      {/* Hero Section with Background Image */}
-      <section className="relative w-full min-h-[600px] flex items-center justify-center py-24 pt-32">
-        <EnhancedHeroBackground 
-          imageUrl="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80"
-          gradientFrom="purple-500"
-          gradientTo="pink-500"
-        />
-
-        <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12" style={{ zIndex: 10 }}>
+      {/* Hero Section */}
+      <section className="relative w-full pt-32 pb-20">
+        <div className="w-full px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -67,14 +62,14 @@ const SecurityResearch = () => {
               <span className="text-sm font-medium text-purple-300">Phase 01: Security Research</span>
             </div>
             
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Security Research &
               <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Reconnaissance
               </span>
             </h1>
             
-            <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 mb-10 leading-relaxed max-w-3xl mx-auto">
               Comprehensive security research and reconnaissance phase. Gathering intelligence, mapping attack surfaces,
               and identifying vulnerabilities before penetration testing begins.
             </p>
@@ -82,14 +77,14 @@ const SecurityResearch = () => {
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <Link
                 to="/contact"
-                className="group bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-purple-500/50 transition-all flex items-center gap-2"
+                className="group bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-gray-900 px-8 py-4 rounded-full font-semibold shadow-lg shadow-purple-500/50 transition-all flex items-center gap-2"
               >
                 Start Security Research
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/contact"
-                className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
+                className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-gray-900 border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
               >
                 Watch Demo
               </Link>
@@ -102,8 +97,8 @@ const SecurityResearch = () => {
                   <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
                     {stat.phase}
                   </div>
-                  <div className="text-white font-semibold text-sm mb-1">{stat.title}</div>
-                  <div className="text-gray-400 text-xs">{stat.description}</div>
+                  <div className="text-gray-900 font-semibold text-sm mb-1">{stat.title}</div>
+                  <div className="text-gray-600 text-xs">{stat.description}</div>
                 </div>
               ))}
             </div>
@@ -111,8 +106,37 @@ const SecurityResearch = () => {
         </div>
       </section>
 
+      {/* Stats Counter Section */}
+      <section className="relative w-full py-16">
+        <div className="w-full px-6 lg:px-12">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-6">
+            {[
+              { value: '500+', label: 'Research Projects', icon: Search },
+              { value: '10K+', label: 'Assets Mapped', icon: Globe },
+              { value: '2K+', label: 'Threats Identified', icon: Shield },
+              { value: '99%', label: 'Coverage Rate', icon: Target }
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 hover:border-purple-400/30 transition-all"
+              >
+                <stat.icon className="w-10 h-10 text-purple-400 mx-auto mb-3" />
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-gray-600">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Research Areas Section */}
-      <section className="relative w-full py-24 bg-slate-900">
+      <section className="relative w-full py-24">
         <div className="w-full px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -121,7 +145,7 @@ const SecurityResearch = () => {
             className="text-center mb-16"
           >
             <span className="text-purple-400 font-semibold text-sm uppercase tracking-wider">Our Approach</span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
               Research Areas
             </h2>
           </motion.div>
@@ -134,16 +158,16 @@ const SecurityResearch = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all"
+                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all"
               >
                 <div className="p-4 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 inline-flex mb-4">
-                  <area.icon className="w-8 h-8 text-white" />
+                  <area.icon className="w-8 h-8 text-gray-900" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{area.title}</h3>
-                <p className="text-gray-400 mb-4">{area.description}</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{area.title}</h3>
+                <p className="text-gray-600 mb-4">{area.description}</p>
                 <div className="space-y-2">
                   {area.activities.map((activity, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
+                    <div key={idx} className="flex items-center gap-2 text-gray-700 text-sm">
                       <CheckCircle className="w-4 h-4 text-purple-400" />
                       <span>{activity}</span>
                     </div>
@@ -155,7 +179,7 @@ const SecurityResearch = () => {
         </div>
       </section>
 
-      {/* Deliverables Section */}
+      {/* Tools & Techniques Section */}
       <section className="relative w-full py-24 bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="w-full px-6 lg:px-12">
           <motion.div
@@ -164,8 +188,45 @@ const SecurityResearch = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <span className="text-purple-400 font-semibold text-sm uppercase tracking-wider">Research Tools</span>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
+              Advanced Research Tools & Techniques
+            </h2>
+          </motion.div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-4">
+              {[
+                'Shodan', 'Censys', 'Maltego', 'Recon-ng', 'theHarvester', 'Amass',
+                'Subfinder', 'DNSRecon', 'Nmap', 'Masscan', 'Nuclei', 'Custom Scripts'
+              ].map((tool, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-3 text-center text-purple-300 font-semibold hover:bg-white/10 hover:border-purple-400/30 transition-all"
+                >
+                  {tool}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deliverables Section */}
+      <section className="relative w-full py-24">
+        <div className="w-full px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
             <span className="text-purple-400 font-semibold text-sm uppercase tracking-wider">Deliverables</span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
               Research Deliverables
             </h2>
           </motion.div>
@@ -178,12 +239,12 @@ const SecurityResearch = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all"
+                className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-6 text-center hover:border-purple-500/50 transition-all"
               >
                 <item.icon className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-                <p className="text-white font-semibold mb-2">{item.item}</p>
+                <p className="text-gray-900 font-semibold mb-2">{item.item}</p>
                 <p className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">{item.count}</p>
-                <p className="text-xs text-gray-400 mt-1">Data Points</p>
+                <p className="text-xs text-gray-600 mt-1">Data Points</p>
               </motion.div>
             ))}
           </div>
@@ -191,7 +252,7 @@ const SecurityResearch = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative w-full py-24 bg-slate-800">
+      <section className="relative w-full py-24 bg-gray-50">
         <div className="w-full px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -199,24 +260,24 @@ const SecurityResearch = () => {
             viewport={{ once: true }}
             className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-xl border border-purple-400/30 rounded-2xl p-12 text-center"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Begin Your Security Research Phase
             </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-700 mb-8 max-w-2xl mx-auto text-lg">
               Get comprehensive security research and reconnaissance. Identify vulnerabilities and map attack surfaces
               before penetration testing.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-purple-500/50 transition-all"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-gray-900 px-8 py-4 rounded-full font-semibold shadow-lg shadow-purple-500/50 transition-all"
               >
                 Start Security Research
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a
                 href="tel:+919493782350"
-                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
+                className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-gray-900 border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
               >
                 Call: +91 94937 82350
               </a>
