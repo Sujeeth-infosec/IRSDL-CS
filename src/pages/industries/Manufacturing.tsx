@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Factory, Shield, CheckCircle, ArrowRight, Cpu, Network, Lock, AlertTriangle } from 'lucide-react'
+import { Factory, CheckCircle, ArrowRight, Cpu, Network, Lock, AlertTriangle } from 'lucide-react'
 import ThemedBackground from '../../components/ThemedBackground'
 
 const Manufacturing = () => {

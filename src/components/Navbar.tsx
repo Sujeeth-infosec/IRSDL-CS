@@ -18,7 +18,6 @@ const Navbar = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
   const hoverTimeout = useRef<number | undefined>(undefined)
-  const auditTimeout = useRef<number | undefined>(undefined)
 
   const handleAuditFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -108,14 +107,7 @@ Please contact this lead as soon as possible.`)
     hoverTimeout.current = window.setTimeout(() => setMegaOpen(false), 120)
   }
 
-  const openAuditDropdown = () => {
-    if (auditTimeout.current) window.clearTimeout(auditTimeout.current)
-    setAuditDropdownOpen(true)
-  }
 
-  const closeAuditDropdown = () => {
-    auditTimeout.current = window.setTimeout(() => setAuditDropdownOpen(false), 120)
-  }
 
   const pentestServices = [
     { icon: Shield, label: 'Web', description: 'Full-stack web and SaaS pentests', path: '/pentest/web' },
@@ -141,7 +133,7 @@ Please contact this lead as soon as possible.`)
   ]
 
   return (
-    <header className="fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-4 w-full max-w-7xl px-4 lg:px-8">
+    <header className="fixed top-10 left-1/2 -translate-x-1/2 z-50 pt-4 w-full max-w-7xl px-4 lg:px-8">
       <div className={`transition-all duration-300 rounded-full ${
         scrolled 
           ? 'bg-slate-800/95 backdrop-blur-xl border border-slate-700 shadow-lg shadow-black/20' 

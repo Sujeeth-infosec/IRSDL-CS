@@ -44,21 +44,21 @@ const CompanyStory = () => {
               className="space-y-6"
             >
               <p className="text-lg text-gray-700 leading-relaxed">
-                At IRSDL, we're a cybersecurity and digital forensics company committed to protecting 
-                your digital world. Our story began with a clear vision — to close the gap between 
-                advanced technology and powerful, reliable security solutions.
+                At IRSDL, we offer a comprehensive security check and evaluation for your organization. 
+                Our IT environment is further protected and secured through continuous monitoring, quick 
+                incident response with management, and adherence to regulatory requirements, all with our 
+                support.
               </p>
 
               <p className="text-lg text-gray-700 leading-relaxed">
-                Backed by hands-on experience and a passionate team of professionals, we've built a 
-                strong reputation for protecting businesses and individuals from the constantly evolving 
-                landscape of cyber threats. Innovation and trust are at the heart of everything we do.
+                The primary goal of our managed security solutions is to prevent your data from falling 
+                into the wrong hands, minimize overall risk, and protect your critical information.
               </p>
 
               <p className="text-lg text-gray-700 leading-relaxed">
-                With CERT-In aligned practices and presence across major Indian cities, we deliver 
-                enterprise-grade security solutions tailored for Indian regulations and compliance 
-                requirements.
+                By identifying and analyzing every potential attack vector and vulnerability in our assets, 
+                we can develop and provide a robust security framework that ensures full protection for 
+                your users, infrastructure, and digital assets.
               </p>
 
               <Link

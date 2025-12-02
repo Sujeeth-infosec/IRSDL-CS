@@ -1,57 +1,54 @@
 import { motion } from 'framer-motion'
+import { Shield, Terminal, Network, Lock, Bug, Search, FileCode, Database } from 'lucide-react'
 
-const companies = [
-  { name: 'TCS', logo: 'https://logo.clearbit.com/tcs.com' },
-  { name: 'Infosys', logo: 'https://logo.clearbit.com/infosys.com' },
-  { name: 'Wipro', logo: 'https://logo.clearbit.com/wipro.com' },
-  { name: 'HDFC Bank', logo: 'https://logo.clearbit.com/hdfcbank.com' },
-  { name: 'ICICI Bank', logo: 'https://logo.clearbit.com/icicibank.com' },
-  { name: 'Flipkart', logo: 'https://logo.clearbit.com/flipkart.com' },
-  { name: 'Paytm', logo: 'https://logo.clearbit.com/paytm.com' },
-  { name: 'Zomato', logo: 'https://logo.clearbit.com/zomato.com' }
+const tools = [
+  { name: 'Burp Suite', icon: Bug, color: 'from-orange-500 to-red-500' },
+  { name: 'Nmap', icon: Network, color: 'from-blue-500 to-cyan-500' },
+  { name: 'Metasploit', icon: Terminal, color: 'from-purple-500 to-pink-500' },
+  { name: 'Wireshark', icon: Search, color: 'from-green-500 to-emerald-500' },
+  { name: 'OWASP ZAP', icon: Shield, color: 'from-indigo-500 to-blue-500' },
+  { name: 'SQLMap', icon: Database, color: 'from-yellow-500 to-orange-500' },
+  { name: 'Nikto', icon: FileCode, color: 'from-red-500 to-pink-500' },
+  { name: 'Nessus', icon: Lock, color: 'from-cyan-500 to-blue-500' }
 ]
 
 const TrustedBy = () => {
   return (
-    <section className="py-8 w-full relative overflow-hidden">
-      <div className="w-full px-6 lg:px-12">
+    <section className="py-16 w-full relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+      <div className="w-full px-6 lg:px-12 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-6"
+          className="text-center mb-12"
         >
-          <span className="text-gray-600 text-sm uppercase tracking-wider">Trusted By</span>
-          <h2 className="text-3xl font-bold text-gray-900 mt-2">
-            Leading Indian Enterprises
+          <span className="text-blue-600 text-sm uppercase tracking-wider font-semibold">Our Arsenal</span>
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">
+            Industry-Leading Security Tools
           </h2>
+          <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+            We leverage the most advanced cybersecurity tools to protect your digital assets
+          </p>
         </motion.div>
 
-        <div className="relative">
-          <div className="flex overflow-hidden">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {tools.map((tool, index) => (
             <motion.div
-              animate={{ x: [0, -1920] }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="flex gap-12 items-center"
+              key={tool.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group relative bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              {[...companies, ...companies, ...companies].map((company, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-40 h-20 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl flex items-center justify-center p-4 hover:bg-white/10 transition-all group"
-                >
-                  <img
-                    src={company.logo}
-                    alt={company.name}
-                    className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none'
-                      e.currentTarget.parentElement!.innerHTML = `<span class="text-gray-600 font-semibold text-sm">${company.name}</span>`
-                    }}
-                  />
-                </div>
-              ))}
+              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${tool.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                <tool.icon className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                {tool.name}
+              </h3>
             </motion.div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -59,4 +56,3 @@ const TrustedBy = () => {
 }
 
 export default TrustedBy
-

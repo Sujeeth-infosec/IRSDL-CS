@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Building2, Shield, CheckCircle, ArrowRight, Lock, Database, Users, Globe } from 'lucide-react'
+import { Building2, CheckCircle, ArrowRight, Lock, Database, Users, Globe } from 'lucide-react'
 import ThemedBackground from '../../components/ThemedBackground'
 
 const PublicSector = () => {

@@ -26,9 +26,9 @@ const SecurityInsights = () => {
     },
     {
       icon: FileCheck,
-      title: 'Compliance Automation',
-      description: 'Automated compliance monitoring for ISO 27001, SOC 2, GDPR, HIPAA, and PCI-DSS with real-time reporting.',
-      stats: '100% audit readiness',
+      title: 'Security Consulting',
+      description: 'Expert guidance on security architecture, risk assessment, and incident response planning with actionable recommendations.',
+      stats: 'Trusted by 500+ clients',
       color: 'from-green-500 to-emerald-500'
     }
   ]

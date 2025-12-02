@@ -6,7 +6,7 @@ const stats = [
   { icon: Shield, value: 500, suffix: '+', label: 'Security Assessments', color: 'from-blue-500 to-cyan-500' },
   { icon: Users, value: 150, suffix: '+', label: 'Enterprise Clients', color: 'from-purple-500 to-pink-500' },
   { icon: Award, value: 99, suffix: '%', label: 'Client Satisfaction', color: 'from-green-500 to-emerald-500' },
-  { icon: Clock, value: 24, suffix: '/7', label: 'SOC Monitoring', color: 'from-orange-500 to-red-500' }
+  { icon: Clock, value: 500, suffix: '+', label: 'VAPT Assessments', color: 'from-orange-500 to-red-500' }
 ]
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {

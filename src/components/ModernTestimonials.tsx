@@ -11,7 +11,7 @@ const ModernTestimonials = () => {
     const scrollContainer = scrollRef.current
     if (!scrollContainer) return
 
-    let scrollInterval: NodeJS.Timeout
+    let scrollInterval: ReturnType<typeof setInterval>
 
     const startScroll = () => {
       scrollInterval = setInterval(() => {

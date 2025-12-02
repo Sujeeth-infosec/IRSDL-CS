@@ -44,25 +44,17 @@ const AnimatedHero = () => {
             transition={{ duration: 0.8 }}
             className="text-gray-900"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-blue-50 backdrop-blur-sm border border-blue-200 rounded-full px-4 py-2 mb-6"
-            >
-              <Zap className="w-4 h-4 text-blue-600" />
-              <span className="text-sm font-semibold text-blue-700">India's Premier Cybersecurity Partner</span>
-            </motion.div>
+
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900"
+              className="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900 pb-2"
             >
               Secure Your
-              <span className="block bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-700 bg-clip-text text-transparent">
-                Digital Future
+              <span className="block bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-700 bg-clip-text text-transparent pb-1">
+                digital future
               </span>
             </motion.h1>
 
@@ -70,10 +62,9 @@ const AnimatedHero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl text-gray-700 mb-8 leading-relaxed font-medium"
+              className="text-xl text-blue-600 mb-8 leading-relaxed font-semibold"
             >
-              CERT-In aligned cybersecurity solutions with 24/7 SOC monitoring, 
-              advanced threat intelligence, and rapid incident response for Indian enterprises.
+              Affordable & Reliable VAPT for Startups & Small Businesses
             </motion.p>
 
             <motion.div
@@ -104,23 +95,7 @@ const AnimatedHero = () => {
               </button>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="flex flex-wrap gap-6"
-            >
-              {[
-                { icon: Shield, text: 'CERT-In Aligned' },
-                { icon: Lock, text: 'ISO 27001 Certified' },
-                { icon: CheckCircle2, text: '99.9% Uptime' }
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-2 text-gray-700">
-                  <item.icon className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm font-semibold">{item.text}</span>
-                </div>
-              ))}
-            </motion.div>
+
           </motion.div>
 
           {/* Right Content - Hero Image with Floating Cards */}
@@ -147,8 +122,8 @@ const AnimatedHero = () => {
                     <p className="text-gray-300 text-sm">Clients Protected</p>
                   </div>
                   <div className="flex-1 bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-4">
-                    <p className="text-3xl font-bold text-white">24/7</p>
-                    <p className="text-gray-300 text-sm">SOC Monitoring</p>
+                    <p className="text-3xl font-bold text-white">500+</p>
+                    <p className="text-gray-300 text-sm">VAPT Assessments</p>
                   </div>
                 </div>
               </div>

@@ -5,17 +5,18 @@ import SecurityDashboard from '../components/SecurityDashboard'
 import SecurityInsights from '../components/SecurityInsights'
 import ProcessTimeline from '../components/ProcessTimeline'
 import LiveThreatMap from '../components/LiveThreatMap'
-import ComplianceGrid from '../components/ComplianceGrid'
 import CompetitiveAdvantage from '../components/CompetitiveAdvantage'
 import AnimatedStats from '../components/AnimatedStats'
 import CaseStudies from '../components/CaseStudies'
 import ModernTestimonials from '../components/ModernTestimonials'
 import CTASection from '../components/CTASection'
 import CompanyStory from '../components/CompanyStory'
+import ConstructionBanner from '../components/ConstructionBanner'
 
 const ProfessionalHome = () => {
   return (
     <div className="relative">
+      <ConstructionBanner />
       <AdvancedBackground />
       <AnimatedHero />
       <TrustedBy />
@@ -24,7 +25,6 @@ const ProfessionalHome = () => {
       <SecurityDashboard />
       <ProcessTimeline />
       <LiveThreatMap />
-      <ComplianceGrid />
       <CompetitiveAdvantage />
       <AnimatedStats />
       <CaseStudies />

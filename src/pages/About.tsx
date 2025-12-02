@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Shield, Award, MapPin, CheckCircle, Target, Eye, Heart } from 'lucide-react'
-import { team, teamStats } from '../data/team'
+import { teamStats } from '../data/team'
 import SimpleBackground from '../components/SimpleBackground'
 
 const About = () => {
@@ -52,7 +52,7 @@ const About = () => {
             </h1>
             <p className="text-xl text-gray-700 leading-relaxed">
               India's premier cybersecurity partner, providing CERT-In aligned security solutions 
-              with 24/7 SOC monitoring across Bengaluru, Gurugram, Mumbai, and Hyderabad.
+              with VAPT services across Bengaluru, Gurugram, Mumbai, and Hyderabad.
             </p>
           </motion.div>
         </div>

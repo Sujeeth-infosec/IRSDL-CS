@@ -32,13 +32,13 @@ const features = [
   {
     id: 3,
     icon: Lock,
-    title: 'Compliance Automation',
-    description: 'Automated compliance reporting for RBI, IRDAI, SEBI, and other regulatory frameworks.',
+    title: 'Security Training',
+    description: 'Comprehensive security awareness training and phishing simulation programs for your team.',
     details: [
-      'Continuous compliance monitoring',
-      'Automated evidence collection',
-      'Custom compliance dashboards',
-      'Audit-ready documentation'
+      'Security awareness workshops',
+      'Phishing simulation campaigns',
+      'Custom training modules',
+      'Progress tracking & reporting'
     ],
     color: 'from-green-500 to-emerald-500'
   },

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { Check, X, Zap, Shield, Clock, Award, Users, Globe } from 'lucide-react'
 
 const features = [
-  { name: '24/7 SOC Monitoring', us: true, others: 'Limited' },
+  { name: 'VAPT Services', us: true, others: 'Limited' },
   { name: 'CERT-In Aligned', us: true, others: false },
   { name: 'Bilingual Support', us: true, others: false },
   { name: 'Indian Data Centers', us: true, others: 'Partial' },
@@ -29,8 +29,8 @@ const advantages = [
   },
   {
     icon: Clock,
-    title: 'Always Available',
-    description: 'True 24/7/365 coverage with dual SOC operations',
+    title: 'Rapid Response',
+    description: 'Quick turnaround with dedicated security experts',
     color: 'from-blue-500 to-cyan-500'
   },
   {

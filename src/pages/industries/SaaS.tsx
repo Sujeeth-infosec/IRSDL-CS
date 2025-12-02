@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Cloud, Shield, CheckCircle, ArrowRight, Users, Lock, Database, Globe } from 'lucide-react'
+import { Cloud, CheckCircle, ArrowRight, Users, Lock, Database, Globe } from 'lucide-react'
 import ThemedBackground from '../../components/ThemedBackground'
 
 const SaaS = () => {

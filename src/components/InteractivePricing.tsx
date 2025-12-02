@@ -9,7 +9,7 @@ const plans = [
     icon: Zap,
     price: '₹49,999',
     period: '/month',
-    description: 'Perfect for startups and small businesses',
+    description: 'Affordable & Reliable VAPT for Startups & Small Businesses',
     color: 'from-blue-500 to-cyan-500',
     features: [
       'Quarterly vulnerability assessments',
@@ -50,7 +50,7 @@ const plans = [
     features: [
       'Continuous security monitoring',
       'Red team operations',
-      '24/7 SOC support',
+      'VAPT Services',
       'All compliance frameworks',
       'Unlimited applications',
       'Real-time threat intelligence',

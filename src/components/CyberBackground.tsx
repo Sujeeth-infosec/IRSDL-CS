@@ -3,7 +3,7 @@ import * as THREE from 'three'
 
 const CyberBackground = () => {
   const mountRef = useRef<HTMLDivElement | null>(null)
-  const frameRef = useRef<number>()
+  const frameRef = useRef<number | undefined>(undefined)
 
   useEffect(() => {
     if (!mountRef.current) return
