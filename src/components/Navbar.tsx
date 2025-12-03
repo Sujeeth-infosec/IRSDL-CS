@@ -6,8 +6,8 @@ const navItems = [
   { path: '/', label: 'Home' },
   { path: '/services', label: 'Services' },
   { path: '/about', label: 'About' },
+  { path: '/training', label: 'Training' },
   { path: '/careers', label: 'Careers' },
-  { path: '/contact', label: 'Contact' },
 ]
 
 const Navbar = () => {
@@ -118,19 +118,7 @@ Please contact this lead as soon as possible.`)
     { icon: Network, label: 'Network', description: 'Internal and perimeter reviews', path: '/pentest/network' },
   ]
 
-  const industries = [
-    { name: 'Healthcare', path: '/industries/healthcare' },
-    { name: 'SaaS', path: '/industries/saas' },
-    { name: 'Fintech', path: '/industries/fintech' },
-    { name: 'Manufacturing', path: '/industries/manufacturing' },
-    { name: 'Public Sector', path: '/industries/public-sector' },
-  ]
-  const processSteps = [
-    { name: 'Security Research', path: '/process/security-research' },
-    { name: 'Threat Modeling', path: '/process/threat-modeling' },
-    { name: 'Pentest Execution', path: '/process/pentest-execution' },
-    { name: 'Reporting & Hardening', path: '/process/reporting-hardening' },
-  ]
+
 
   return (
     <header className="fixed top-10 left-1/2 -translate-x-1/2 z-50 pt-4 w-full max-w-7xl px-4 lg:px-8">
@@ -181,39 +169,7 @@ Please contact this lead as soon as possible.`)
                     ))}
                   </div>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-xs font-semibold uppercase text-blue-400 tracking-widest">Industry focus</p>
-                    <ul className="mt-3 space-y-2 text-sm text-gray-300">
-                      {industries.map((industry) => (
-                        <Link
-                          key={industry.name}
-                          to={industry.path}
-                          className="flex items-center gap-2 hover:text-blue-400 transition"
-                        >
-                          <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
-                          {industry.name}
-                        </Link>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase text-blue-400 tracking-widest">Astra-style process</p>
-                    <ol className="mt-3 space-y-3">
-                      {processSteps.map((step, idx) => (
-                        <Link
-                          key={step.name}
-                          to={step.path}
-                          className="flex items-start gap-3 text-sm text-gray-300 hover:text-blue-400 transition"
-                        >
-                          <span className="text-blue-400 font-semibold">{String(idx + 1).padStart(2, '0')}</span>
-                          {step.name}
-                        </Link>
-                      ))}
-                    </ol>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between border-t border-slate-700 pt-4 text-gray-300">
+                <div className="flex items-center justify-between border-t border-slate-700 pt-4 mt-4 text-gray-300">
                   <div>
                     <p className="text-sm font-semibold text-white">Need guidance?</p>
                     <p className="text-xs text-gray-400">Speak with our lead offensive architect in under 3 minutes.</p>

@@ -36,10 +36,7 @@ const Footer = () => {
               Elite cybersecurity and digital resilience for forward-looking enterprises across India.
             </p>
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-xs text-gray-700">
-                <Phone className="h-3 w-3 text-blue-600 flex-shrink-0" />
-                <span>+91 94937 82350</span>
-              </div>
+
               <div className="flex items-center gap-2 text-xs text-gray-700">
                 <Mail className="h-3 w-3 text-blue-600 flex-shrink-0" />
                 <span>contact@irsdl.com</span>
@@ -59,9 +56,6 @@ const Footer = () => {
               </Link>
               <Link to="/careers" className="text-gray-600 hover:text-blue-600 transition">
                 Careers
-              </Link>
-              <Link to="/contact" className="text-gray-600 hover:text-blue-600 transition">
-                Contact
               </Link>
             </div>
           </div>

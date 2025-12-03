@@ -29,16 +29,7 @@ export const services: Service[] = [
     tools: ['Mythic', 'Cobalt Strike', 'BloodHound', 'Custom tradecraft', 'Hardware implants'],
     benefits: ['Expose gaps in detective controls', 'Measure SOC readiness with MITRE ATT&CK mapping', 'Achieve executive clarity on breach impact'],
   },
-  {
-    slug: 'soc',
-    title: 'SOC Operations-as-a-Service',
-    tagline: '24/7 threat monitoring, triage, and response led by tier-3 analysts.',
-    overview:
-      'Our fused intelligence and automation stack ingests your telemetry, hunts for anomalies, and activates on-call responders within minutes.',
-    methodology: ['SIEM onboarding & runbooks', 'Threat hunting & ML detections', 'Incident response orchestration', 'Post-incident retrospectives'],
-    tools: ['Splunk', 'Microsoft Sentinel', 'Elastic', 'SOAR playbooks', 'Sigma rulesets'],
-    benefits: ['Lower mean time to respond', 'Extend coverage without headcount', 'Continuous tuning against evolving TTPs'],
-  },
+
   {
     slug: 'threat-intelligence',
     title: 'Threat Intelligence & Digital Risk',

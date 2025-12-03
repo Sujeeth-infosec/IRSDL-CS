@@ -1,34 +1,59 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import ServiceDetail from './pages/ServiceDetail'
 import About from './pages/About'
+import Training from './pages/Training'
 import Contact from './pages/Contact'
 import Careers from './pages/Careers'
 import NotFound from './pages/NotFound'
 import PageTransition from './components/PageTransition'
 import ScrollToTop from './components/ScrollToTop'
+import CookieConsent from './components/CookieConsent'
+import { analytics } from './utils/analytics'
+import { seo } from './utils/seo'
+import { cookieConsent } from './utils/cookieConsent'
 import WebPentest from './pages/pentest/WebPentest'
 import AIPentest from './pages/pentest/AIPentest'
 import MobilePentest from './pages/pentest/MobilePentest'
 import APIPentest from './pages/pentest/APIPentest'
 import CloudPentest from './pages/pentest/CloudPentest'
 import NetworkPentest from './pages/pentest/NetworkPentest'
-import Healthcare from './pages/industries/Healthcare'
-import SaaS from './pages/industries/SaaS'
-import Fintech from './pages/industries/Fintech'
-import Manufacturing from './pages/industries/Manufacturing'
-import PublicSector from './pages/industries/PublicSector'
-import SecurityResearch from './pages/process/SecurityResearch'
-import ThreatModeling from './pages/process/ThreatModeling'
-import PentestExecution from './pages/process/PentestExecution'
-import ReportingHardening from './pages/process/ReportingHardening'
+import WebAPITraining from './pages/training/WebAPITraining'
+import EthicalHacking from './pages/training/EthicalHacking'
+import NetworkPentestTraining from './pages/training/NetworkPentest'
+import CloudPentestTraining from './pages/training/CloudPentest'
 
 const App = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    // Initialize analytics (replace with your GA4 measurement ID)
+    analytics.init('G-XXXXXXXXXX')
+    
+    // Set organization structured data
+    seo.setOrganizationData()
+    
+    // Apply saved cookie preferences
+    const preferences = cookieConsent.getPreferences()
+    if (cookieConsent.hasConsent()) {
+      cookieConsent.applyPreferences(preferences)
+    }
+  }, [])
+
+  useEffect(() => {
+    // Track page views on route change
+    if (cookieConsent.hasConsent() && cookieConsent.getPreferences().statistic) {
+      analytics.pageView(location.pathname + location.search)
+    }
+  }, [location])
+
   return (
     <>
       <ScrollToTop />
+      <CookieConsent />
       <Routes>
       <Route element={<MainLayout />}>
         <Route
@@ -60,6 +85,14 @@ const App = () => {
           element={
             <PageTransition>
               <About />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="training"
+          element={
+            <PageTransition>
+              <Training />
             </PageTransition>
           }
         />
@@ -128,74 +161,34 @@ const App = () => {
           }
         />
         <Route
-          path="industries/healthcare"
+          path="training/web-api-mobile"
           element={
             <PageTransition>
-              <Healthcare />
+              <WebAPITraining />
             </PageTransition>
           }
         />
         <Route
-          path="industries/saas"
+          path="training/ethical-hacking"
           element={
             <PageTransition>
-              <SaaS />
+              <EthicalHacking />
             </PageTransition>
           }
         />
         <Route
-          path="industries/fintech"
+          path="training/network-pentest"
           element={
             <PageTransition>
-              <Fintech />
+              <NetworkPentestTraining />
             </PageTransition>
           }
         />
         <Route
-          path="industries/manufacturing"
+          path="training/cloud-pentest"
           element={
             <PageTransition>
-              <Manufacturing />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="industries/public-sector"
-          element={
-            <PageTransition>
-              <PublicSector />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="process/security-research"
-          element={
-            <PageTransition>
-              <SecurityResearch />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="process/threat-modeling"
-          element={
-            <PageTransition>
-              <ThreatModeling />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="process/pentest-execution"
-          element={
-            <PageTransition>
-              <PentestExecution />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="process/reporting-hardening"
-          element={
-            <PageTransition>
-              <ReportingHardening />
+              <CloudPentestTraining />
             </PageTransition>
           }
         />

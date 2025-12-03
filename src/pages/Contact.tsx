@@ -11,7 +11,8 @@ const Contact = () => {
       address: '23-7-169, 3rd Floor, Santhi Nagar, MR Palli Circle, Tirupati, AP - 517502',
       phone: '+91 94937 82350',
       email: 'contact@irsdl.com',
-      hours: 'Mon-Sat: 9:00 AM - 6:00 PM'
+      hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=23-7-169+3rd+Floor+Santhi+Nagar+MR+Palli+Circle+Tirupati+AP+517502'
     },
     {
       title: 'Bangalore Branch',
@@ -19,7 +20,8 @@ const Contact = () => {
       address: '57 Novel Business Park, Gajendra Nager, Hosur Road, Anepalya, Bangalore - 560030',
       phone: '+91 94937 82350',
       email: 'contact@irsdl.com',
-      hours: 'Mon-Sat: 9:00 AM - 6:00 PM'
+      hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=57+Novel+Business+Park+Gajendra+Nager+Hosur+Road+Anepalya+Bangalore+560030'
     },
     {
       title: 'Hyderabad Branch',
@@ -27,7 +29,8 @@ const Contact = () => {
       address: 'Flat No.24, Dollar Hills, Pragathi Nagar, Nizampet, Medchal-Malkajgiri District, Telangana - 500090',
       phone: '+91 94937 82350',
       email: 'contact@irsdl.com',
-      hours: 'Mon-Sat: 9:00 AM - 6:00 PM'
+      hours: 'Mon-Sat: 9:00 AM - 6:00 PM',
+      mapUrl: 'https://www.google.com/maps/search/?api=1&query=Flat+No.24+Dollar+Hills+Pragathi+Nagar+Nizampet+Medchal-Malkajgiri+Telangana+500090'
     }
   ]
 
@@ -219,24 +222,28 @@ const Contact = () => {
             <p className="text-gray-600 text-lg">We're located across major Indian cities</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {offices.map((office, index) => (
-              <motion.div
+              <motion.a
                 key={index}
+                href={office.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white border border-gray-200 shadow-lg rounded-2xl overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                className="bg-white border border-gray-200 shadow-lg rounded-xl overflow-hidden cursor-pointer hover:border-blue-500 transition-all"
               >
-                <div className="h-64 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
-                  <MapPin className="w-16 h-16 text-blue-600" />
+                <div className="h-32 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
+                  <MapPin className="w-10 h-10 text-blue-600" />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{office.title}</h3>
-                  <p className="text-gray-600 text-sm">{office.address}</p>
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">{office.title}</h3>
+                  <p className="text-gray-600 text-xs line-clamp-2">{office.address}</p>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>

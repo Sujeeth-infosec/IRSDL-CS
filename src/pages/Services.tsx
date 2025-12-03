@@ -20,7 +20,6 @@ import SimpleBackground from '../components/SimpleBackground'
 import PentestOverview from '../components/PentestOverview'
 import SecurityAssessments from '../components/SecurityAssessments'
 import SocialEngineeringSection from '../components/SocialEngineeringSection'
-import ComplianceServices from '../components/ComplianceServices'
 
 const iconMap: Record<string, LucideIcon> = {
   vapt: Shield,
@@ -179,7 +178,6 @@ const Services = () => {
       <PentestOverview />
       <SecurityAssessments />
       <SocialEngineeringSection />
-      <ComplianceServices />
 
       {/* CTA Section */}
       <section className="relative w-full pb-20">
@@ -206,12 +204,6 @@ const Services = () => {
                   Schedule Consultation
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a
-                  href="tel:+919493782350"
-                  className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-gray-900 border border-white/20 px-8 py-4 rounded-full font-semibold transition-all"
-                >
-                  Call: +91 94937 82350
-                </a>
               </div>
             </motion.div>
           </div>
