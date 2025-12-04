@@ -146,3 +146,29 @@ section {
   margin-left: calc(-50vw + 50%) !important;
 }
 
+/* Add consistent side gaps between viewport edge and content.
+   Uses a responsive clamp so gaps scale on different screen sizes.
+   Targets common inner wrappers that use Tailwind's `px-6` / `px-12`.
+*/
+.content-gutter,
+.px-6,
+.px-12 {
+  padding-left: clamp(16px, 4vw, 96px) !important;
+  padding-right: clamp(16px, 4vw, 96px) !important;
+  box-sizing: border-box;
+}
+
+/* Keep some elements full-bleed when explicitly needed via `.full-bleed` */
+.full-bleed {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Fix heading descenders clipping by allowing tighter line-height without clipping */
+.heading-tight {
+  line-height: 1.2;
+  overflow: visible;
+}
+
