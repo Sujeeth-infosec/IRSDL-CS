@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, Users, Award, BookOpen, Target, Shield } from 'lucide-react'
+import { Users, BookOpen, Target, Shield } from 'lucide-react'
 import SimpleBackground from '../components/SimpleBackground'
 
 const Training = () => {

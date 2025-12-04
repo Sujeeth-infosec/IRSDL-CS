@@ -82,10 +82,10 @@ export const seo = {
 
   // Generate structured data (JSON-LD)
   setStructuredData(data: any): void {
-    let script = document.querySelector('script[type="application/ld+json"]')
+    let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement
     
     if (!script) {
-      script = document.createElement('script')
+      script = document.createElement('script') as HTMLScriptElement
       script.type = 'application/ld+json'
       document.head.appendChild(script)
     }

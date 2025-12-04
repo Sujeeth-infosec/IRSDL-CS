@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { MapPin, Phone, Mail } from 'lucide-react'
+import { MapPin, Mail } from 'lucide-react'
 import irsdlLogo from '../assets/IRSDL LOGO-01.png'
 
 const Footer = () => {

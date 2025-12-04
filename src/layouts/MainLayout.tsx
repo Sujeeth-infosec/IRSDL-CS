@@ -1,16 +1,25 @@
 import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ConstructionBanner from '../components/ConstructionBanner'
 
 const MainLayout = () => (
-  <div className="min-h-screen w-full bg-white text-gray-900 flex flex-col m-0 p-0">
+  <div 
+    className="min-h-screen w-screen bg-black text-gray-900 flex flex-col overflow-hidden" 
+    style={{ margin: 0, padding: 0, width: '100%', maxWidth: '100%' }}
+  >
+    <ConstructionBanner />
     <Navbar />
-    <main className="flex-1 w-full pt-16 m-0 p-0 bg-white">
+    
+    <main 
+      className="flex-1 w-screen bg-white" 
+      style={{ margin: 0, padding: 0, width: '100%' }}
+    >
       <Outlet />
     </main>
+    
     <Footer />
   </div>
 )
 
 export default MainLayout
-

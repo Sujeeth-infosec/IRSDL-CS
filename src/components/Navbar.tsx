@@ -121,7 +121,7 @@ Please contact this lead as soon as possible.`)
 
 
   return (
-    <header className="fixed top-10 left-1/2 -translate-x-1/2 z-50 pt-4 w-full max-w-7xl px-4 lg:px-8">
+    <header className="fixed top-14 left-1/2 -translate-x-1/2 z-50 pt-4 w-full max-w-7xl px-4 lg:px-8">
       <div className={`transition-all duration-300 rounded-full ${
         scrolled 
           ? 'bg-slate-800/95 backdrop-blur-xl border border-slate-700 shadow-lg shadow-black/20' 
@@ -204,7 +204,7 @@ Please contact this lead as soon as possible.`)
             onClick={() => setAuditDropdownOpen(!auditDropdownOpen)}
             className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg shadow-blue-500/30 transition hover:scale-105 flex-shrink-0"
           >
-            FREE CYBERSECURITY AUDIT
+            Get Quote
           </button>
           {auditDropdownOpen && (
             <div
@@ -333,7 +333,7 @@ Please contact this lead as soon as possible.`)
               className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-4 py-2 rounded-full text-center font-semibold shadow-lg shadow-blue-500/30"
               onClick={() => setOpen(false)}
             >
-              FREE CYBERSECURITY AUDIT
+              Get Quote
             </Link>
           </div>
         </div>

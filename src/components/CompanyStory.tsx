@@ -61,13 +61,15 @@ const CompanyStory = () => {
                 your users, infrastructure, and digital assets.
               </p>
 
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/30 transition-all hover:scale-105"
-              >
-                About Us
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+              <div className="flex justify-center pt-4">
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/30 transition-all hover:scale-105"
+                >
+                  About Us
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>

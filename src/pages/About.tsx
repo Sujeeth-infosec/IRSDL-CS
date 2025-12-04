@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Shield, CheckCircle, MapPin, Award, Users, Target } from 'lucide-react'
+import { Shield, CheckCircle, MapPin, Target } from 'lucide-react'
 import SimpleBackground from '../components/SimpleBackground'
 
 const About = () => {
@@ -16,7 +16,7 @@ const About = () => {
             className="text-center mb-16"
           >
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              About IRSDL CyberSecure
+              About IRSDL Cyber Security
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Your trusted partner in cybersecurity, delivering affordable and reliable VAPT services 
@@ -71,6 +71,100 @@ const About = () => {
       </section>
 
 
+
+      {/* Mission, Values & Vision */}
+      <section className="relative w-full py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="w-full px-6 lg:px-12 max-w-7xl mx-auto">
+          {/* Mission */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="text-center mb-8">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Mission</h2>
+            </div>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-5xl mx-auto text-center">
+              To deliver cutting-edge technology solutions and professional services that drive digital transformation 
+              for businesses across industries, enabling our clients to achieve operational excellence, enhanced security, 
+              and sustainable growth in an ever-evolving digital landscape.
+            </p>
+          </motion.div>
+
+          {/* Values */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                At IRSDL, we are guided by principles that define who we are and how we operate
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: 'Integrity',
+                  description: 'We conduct our business with the highest ethical standards, building trust through transparency, accountability, and honest communication with our clients, partners, and team members.'
+                },
+                {
+                  title: 'Innovation',
+                  description: 'We embrace creativity and continuous improvement, staying ahead of technological advancements to deliver solutions that solve complex challenges and create lasting value.'
+                },
+                {
+                  title: 'Excellence',
+                  description: 'We are committed to delivering superior quality in every project, service, and interaction, exceeding expectations and setting new benchmarks in our industry.'
+                },
+                {
+                  title: 'Collaboration',
+                  description: 'We believe in the power of teamwork and partnerships, working closely with our clients to understand their unique needs and co-create solutions that drive mutual success.'
+                },
+                {
+                  title: 'Customer-Centricity',
+                  description: 'We place our clients at the heart of everything we do, ensuring their satisfaction through responsive service, tailored solutions, and unwavering dedication to their success.'
+                },
+                {
+                  title: 'Reliability',
+                  description: 'We honor our commitments and deliver consistent, dependable results that our clients can count on, building long-term relationships founded on trust and proven performance.'
+                }
+              ].map((value, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white rounded-xl p-6 shadow-lg border border-blue-100 hover:shadow-xl transition-shadow"
+                >
+                  <h3 className="text-xl font-bold text-blue-600 mb-3">{value.title}</h3>
+                  <p className="text-gray-700 leading-relaxed">{value.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Vision */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-12 text-center"
+          >
+            <h2 className="text-4xl font-bold text-white mb-6">Our Vision</h2>
+            <p className="text-lg text-blue-50 leading-relaxed max-w-5xl mx-auto">
+              To be a globally recognized leader in technology solutions and digital services, distinguished by our 
+              expertise, innovation, and commitment to empowering organizations worldwide. We aspire to shape the 
+              future of business through transformative technologies, creating a connected, secure, and efficient 
+              digital ecosystem that benefits enterprises, communities, and stakeholders across all sectors.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Our Approach */}
       <section className="relative w-full py-20">

@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 
 const AnimatedHero = () => {
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black m-0 p-0" style={{ margin: 0, padding: 0 }}>
       {/* Animated glowing orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -79,9 +79,9 @@ const AnimatedHero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white"
+              className="text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white"
             >
-              Intelligent Automation for
+              Intelligent <span className="text-cyan-400">Security</span> for
               <span className="block text-white">
                 Modern Businesses.
               </span>
@@ -94,7 +94,7 @@ const AnimatedHero = () => {
               transition={{ delay: 0.4 }}
               className="text-lg lg:text-xl text-gray-300 mb-10 max-w-2xl mx-auto"
             >
-              Xtract brings AI automation to your fingertips & streamline tasks.
+              IRSDL brings Security to your fingertips & streamline tasks.
             </motion.p>
 
             {/* CTA Buttons */}

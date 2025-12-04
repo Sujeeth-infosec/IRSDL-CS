@@ -119,50 +119,56 @@ const Services = () => {
                       to={`/services/${service.slug}`}
                       className="group block h-full"
                     >
-                      <div className="bg-white border border-gray-200 hover:border-blue-400 rounded-2xl p-8 h-full transition-all hover:shadow-xl hover:scale-105">
-                        {/* Icon */}
-                        <div className="flex items-start justify-between mb-6">
-                          <div className={`p-4 rounded-xl bg-gradient-to-br ${gradient} shadow-lg`}>
-                            <Icon className="w-8 h-8 text-gray-900" />
-                          </div>
-                          <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
-                        </div>
-
-                        {/* Title */}
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                          {service.title}
-                        </h3>
-
-                        {/* Description */}
-                        <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                          {service.tagline}
-                        </p>
-
-                        {/* Key Benefits */}
-                        <div className="space-y-2 pt-4 border-t border-gray-200">
-                          {service.benefits.slice(0, 2).map((benefit, i) => (
-                            <div key={i} className="flex items-start gap-2">
-                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                              <span className="text-gray-600 text-xs leading-relaxed">{benefit}</span>
+                      <div className="relative bg-white border border-gray-200 hover:border-transparent rounded-2xl p-8 h-full transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/30 hover:scale-105 overflow-hidden">
+                        {/* Gradient Overlay - Fades in on hover */}
+                        <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl`}></div>
+                        
+                        {/* Content */}
+                        <div className="relative z-10">
+                          {/* Icon */}
+                          <div className="flex items-start justify-between mb-6">
+                            <div className={`p-4 rounded-xl bg-gradient-to-br ${gradient} shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500`}>
+                              <Icon className="w-8 h-8 text-white" />
                             </div>
-                          ))}
-                        </div>
+                            <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
+                          </div>
 
-                        {/* Tools Badge */}
-                        <div className="mt-6 flex flex-wrap gap-2">
-                          {service.tools.slice(0, 3).map((tool, i) => (
-                            <span
-                              key={i}
-                              className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-600"
-                            >
-                              {tool}
-                            </span>
-                          ))}
-                          {service.tools.length > 3 && (
-                            <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-600">
-                              +{service.tools.length - 3} more
-                            </span>
-                          )}
+                          {/* Title */}
+                          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                            {service.title}
+                          </h3>
+
+                          {/* Description */}
+                          <p className="text-gray-600 text-sm mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                            {service.tagline}
+                          </p>
+
+                          {/* Key Benefits */}
+                          <div className="space-y-2 pt-4 border-t border-gray-200 group-hover:border-gray-300 transition-colors duration-300">
+                            {service.benefits.slice(0, 2).map((benefit, i) => (
+                              <div key={i} className="flex items-start gap-2">
+                                <CheckCircle className="w-4 h-4 text-green-600 group-hover:text-green-700 flex-shrink-0 mt-0.5 transition-colors duration-300" />
+                                <span className="text-gray-600 group-hover:text-gray-700 text-xs leading-relaxed transition-colors duration-300">{benefit}</span>
+                              </div>
+                            ))}
+                          </div>
+
+                          {/* Tools Badge */}
+                          <div className="mt-6 flex flex-wrap gap-2">
+                            {service.tools.slice(0, 3).map((tool, i) => (
+                              <span
+                                key={i}
+                                className="px-3 py-1 bg-gray-100 group-hover:bg-white/80 border border-gray-200 group-hover:border-gray-300 rounded-full text-xs text-gray-600 group-hover:text-gray-700 transition-all duration-300"
+                              >
+                                {tool}
+                              </span>
+                            ))}
+                            {service.tools.length > 3 && (
+                              <span className="px-3 py-1 bg-gray-100 group-hover:bg-white/80 border border-gray-200 group-hover:border-gray-300 rounded-full text-xs text-gray-600 group-hover:text-gray-700 transition-all duration-300">
+                                +{service.tools.length - 3} more
+                              </span>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </Link>

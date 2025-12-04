@@ -4,68 +4,7 @@ import { Briefcase, MapPin, Clock, DollarSign, Users, TrendingUp, Heart, Award, 
 import SimpleBackground from '../components/SimpleBackground'
 
 const Careers = () => {
-  const openPositions = [
-    {
-      title: 'Senior Penetration Tester',
-      department: 'Security Testing',
-      location: 'Bengaluru, Karnataka',
-      type: 'Full-time',
-      experience: '5+ years',
-      salary: '₹15-25 LPA',
-      skills: ['OSCP', 'Web Security', 'Network Security', 'Python'],
-      description: 'Lead penetration testing engagements for enterprise clients across India.'
-    },
-    {
-      title: 'Cloud Security Engineer',
-      department: 'Cloud Security',
-      location: 'Gurugram, Haryana',
-      type: 'Full-time',
-      experience: '3-5 years',
-      salary: '₹12-20 LPA',
-      skills: ['AWS', 'Azure', 'GCP', 'Terraform', 'Kubernetes'],
-      description: 'Secure cloud infrastructure for Indian enterprises with focus on data residency.'
-    },
-    {
-      title: 'SOC Analyst',
-      department: 'Security Operations',
-      location: 'Mumbai, Maharashtra',
-      type: 'Full-time',
-      experience: '2-4 years',
-      salary: '₹8-15 LPA',
-      skills: ['SIEM', 'Threat Hunting', 'Incident Response', 'CERT-In'],
-      description: '24/7 security monitoring and incident response for critical infrastructure.'
-    },
-    {
-      title: 'Application Security Engineer',
-      department: 'AppSec',
-      location: 'Hyderabad, Telangana',
-      type: 'Full-time',
-      experience: '3-5 years',
-      salary: '₹10-18 LPA',
-      skills: ['SAST', 'DAST', 'Secure SDLC', 'DevSecOps'],
-      description: 'Integrate security into development lifecycle for enterprise applications.'
-    },
-    {
-      title: 'Compliance Manager',
-      department: 'GRC',
-      location: 'Delhi NCR',
-      type: 'Full-time',
-      experience: '4-6 years',
-      salary: '₹12-20 LPA',
-      skills: ['ISO 27001', 'RBI', 'IRDAI', 'SEBI', 'Audit'],
-      description: 'Ensure compliance with Indian regulatory frameworks and international standards.'
-    },
-    {
-      title: 'Security Researcher',
-      department: 'Research',
-      location: 'Remote',
-      type: 'Full-time',
-      experience: '3+ years',
-      salary: '₹15-25 LPA',
-      skills: ['Vulnerability Research', 'Exploit Development', 'Bug Bounty'],
-      description: 'Discover and research new security vulnerabilities and attack techniques.'
-    }
-  ]
+  const openPositions: any[] = []
 
   const benefits = [
     {
@@ -149,34 +88,6 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="relative w-full py-16 bg-gray-50">
-        <div className="w-full px-6 lg:px-12">
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { value: '50+', label: 'Security Experts' },
-              { value: '15+', label: 'Indian Cities' },
-              { value: '100%', label: 'Certification Support' },
-              { value: '4.8/5', label: 'Employee Rating' }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-lg"
-              >
-                <div className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-gray-600">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Benefits Section */}
       <section className="relative w-full py-24">
         <div className="w-full px-6 lg:px-12">
@@ -227,13 +138,32 @@ const Careers = () => {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4">
               Join Our Team
             </h2>
-            <p className="text-gray-600 text-lg mt-4">
-              {openPositions.length} positions available across India
-            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {openPositions.map((position, index) => (
+          {openPositions.length === 0 ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-2xl mx-auto text-center bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-2xl p-12"
+            >
+              <Briefcase className="w-16 h-16 text-blue-600 mx-auto mb-6" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">No Current Openings</h3>
+              <p className="text-gray-700 mb-6">
+                We don't have any open positions at the moment, but we're always looking for talented 
+                cybersecurity professionals. Send us your resume and we'll keep you in mind for future opportunities.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/30 transition-all"
+              >
+                Send Your Resume
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </motion.div>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-6">
+              {openPositions.map((position, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -272,7 +202,7 @@ const Careers = () => {
                 <div className="mb-6">
                   <p className="text-xs font-semibold text-blue-600 mb-3">Required Skills:</p>
                   <div className="flex flex-wrap gap-2">
-                    {position.skills.map((skill, i) => (
+                    {position.skills.map((skill: string, i: number) => (
                       <span
                         key={i}
                         className="px-3 py-1 bg-blue-500/20 border border-blue-400/30 rounded-full text-xs text-blue-300"
@@ -292,7 +222,8 @@ const Careers = () => {
                 </Link>
               </motion.div>
             ))}
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
