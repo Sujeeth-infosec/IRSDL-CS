@@ -136,3 +136,13 @@ select:focus {
   outline-offset: 2px !important;
 }
 
+/* Make all sections full-width by default */
+[class*="max-w-"] {
+  max-width: 100% !important;
+}
+
+section {
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+}
+
