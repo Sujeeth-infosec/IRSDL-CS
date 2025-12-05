@@ -121,14 +121,14 @@ Please contact this lead as soon as possible.`)
 
 
   return (
-    <header className="fixed top-14 left-1/2 -translate-x-1/2 z-50 pt-4 w-full max-w-7xl px-4 lg:px-8">
-      <div className={`transition-all duration-300 rounded-full ${
+    <header className="fixed top-0 left-0 right-0 z-50 pt-4 px-4 lg:px-8">
+      <div className={`max-w-7xl mx-auto transition-all duration-300 rounded-full ${
         scrolled 
           ? 'bg-slate-800/95 backdrop-blur-xl border border-slate-700 shadow-lg shadow-black/20' 
           : 'bg-slate-800/90 backdrop-blur-md border border-slate-700/50'
       }`}>
       <div className={`flex items-center justify-between px-6 lg:px-8 transition-all duration-300 ${
-        scrolled ? 'py-2.5' : 'py-3'
+        scrolled ? 'py-2' : 'py-3'
       } relative`}>
         <Link to="/" className="flex items-center gap-3 font-semibold text-lg flex-shrink-0">
           <img 
@@ -204,107 +204,34 @@ Please contact this lead as soon as possible.`)
             onClick={() => setAuditDropdownOpen(!auditDropdownOpen)}
             className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg shadow-blue-500/30 transition hover:scale-105 flex-shrink-0"
           >
-            Get Quote
+            Contact Us
           </button>
           {auditDropdownOpen && (
             <div
-              className="absolute right-0 top-12 w-96 bg-slate-800 text-white shadow-2xl rounded-2xl border border-slate-700 p-6 z-40"
+              className="absolute right-0 top-12 w-64 bg-slate-800 text-white shadow-2xl rounded-2xl border border-slate-700 p-4 z-40"
             >
-              <h3 className="text-lg font-bold mb-1">Get Your Free Audit</h3>
-              <p className="text-xs text-gray-400 mb-4">Fill out the form below and we'll contact you</p>
+              <h3 className="text-lg font-bold mb-4">Our Services</h3>
+              <div className="space-y-2">
+                <a href="/contact" className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors">
+                  Cyber Security (VAPT)
+                </a>
+                <a href="/contact" className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors">
+                  Web Development
+                </a>
+                <a href="/contact" className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors">
+                  AIML Development
+                </a>
+                <a href="/contact" className="block px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-slate-700 rounded-lg transition-colors">
+                  Digital Marketing
+                </a>
+              </div>
               
-              <form className="space-y-3" onSubmit={handleAuditFormSubmit}>
-                <div>
-                  <input
-                    type="text"
-                    name="fullName"
-                    placeholder="Full Name *"
-                    required
-                    className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm placeholder-gray-400 focus:outline-none focus:border-cyan-500 transition-colors"
-                  />
-                </div>
-                
-                <div>
-                  <input
-                    type="text"
-                    name="companyName"
-                    placeholder="Company Name *"
-                    required
-                    className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm placeholder-gray-400 focus:outline-none focus:border-cyan-500 transition-colors"
-                  />
-                </div>
-                
-                <div>
-                  <input
-                    type="tel"
-                    name="phoneNumber"
-                    placeholder="Phone Number *"
-                    required
-                    className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm placeholder-gray-400 focus:outline-none focus:border-cyan-500 transition-colors"
-                  />
-                </div>
-                
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email *"
-                    required
-                    className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm placeholder-gray-400 focus:outline-none focus:border-cyan-500 transition-colors"
-                  />
-                </div>
-                
-                <div>
-                  <select
-                    name="service"
-                    required
-                    className="w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white text-sm focus:outline-none focus:border-cyan-500 transition-colors"
-                  >
-                    <option value="">Select Service *</option>
-                    <option value="Web Application Pentest">Web Application Pentest</option>
-                    <option value="API Pentest">API Pentest</option>
-                    <option value="AI/ML Security Assessment">AI/ML Security Assessment</option>
-                    <option value="Cloud Pentest">Cloud Pentest</option>
-                    <option value="Mobile Pentest">Mobile Pentest</option>
-                    <option value="Network Pentest">Network Pentest</option>
-                    <option value="Vulnerability Management">Vulnerability Management</option>
-                    <option value="M365 Security Assessment">M365 Security Assessment</option>
-                    <option value="Social Engineering">Social Engineering</option>
-                    <option value="Compliance Services">Compliance Services</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-                
-                <div className="flex items-center gap-2 py-2">
-                  <input
-                    type="checkbox"
-                    id="robot-check"
-                    required
-                    className="w-4 h-4 bg-slate-700 border border-slate-600 rounded focus:ring-2 focus:ring-cyan-500"
-                  />
-                  <label htmlFor="robot-check" className="text-sm text-gray-300">
-                    I'm not a robot *
-                  </label>
-                </div>
-                
-                {submitMessage && (
-                  <div className={`text-sm text-center py-2 rounded-lg ${
-                    submitMessage.includes('✓') 
-                      ? 'bg-green-500/20 text-green-300 border border-green-500/30' 
-                      : 'bg-red-500/20 text-red-300 border border-red-500/30'
-                  }`}>
-                    {submitMessage}
-                  </div>
-                )}
-                
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-4 py-2.5 rounded-lg font-semibold text-sm shadow-lg transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-                >
-                  {isSubmitting ? 'Sending...' : 'Submit Request'}
-                </button>
-              </form>
+              <div className="mt-4 pt-4 border-t border-slate-700">
+                <a href="/contact" className="block w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-4 py-2 rounded-lg font-semibold text-sm text-center transition-all hover:scale-105">
+                  Contact Us
+                </a>
+              </div>
+
             </div>
           )}
         </div>
@@ -333,7 +260,7 @@ Please contact this lead as soon as possible.`)
               className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-4 py-2 rounded-full text-center font-semibold shadow-lg shadow-blue-500/30"
               onClick={() => setOpen(false)}
             >
-              Get Quote
+              Contact Us
             </Link>
           </div>
         </div>
